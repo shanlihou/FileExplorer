@@ -18,6 +18,7 @@
  */
 
 package net.micode.fileexplorer;
+import android.util.Log;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;

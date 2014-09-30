@@ -18,12 +18,14 @@
  */
 
 package net.micode.fileexplorer;
+import android.util.Log;
 
 import java.util.HashMap;
 
 import android.app.Activity;
 
 public class ActivitiesManager {
+
     public static final String ACTIVITY_FILE_VIEW = "FileView";
 
     public static final String ACTIVITY_FILE_CATEGORY = "FileCategory";

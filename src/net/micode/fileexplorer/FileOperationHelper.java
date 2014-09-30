@@ -19,14 +19,17 @@
 
 package net.micode.fileexplorer;
 
-import java.io.File;
-import java.io.FilenameFilter;
+import java.io.*;
 import java.util.ArrayList;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 public class FileOperationHelper {
     private static final String LOG_TAG = "FileOperation";
@@ -291,6 +294,80 @@ public class FileOperationHelper {
             Log.e(LOG_TAG, "Fail to move file," + e.toString());
         }
         return false;
+    }
+
+    public boolean EncryptFile(FileInfo f, Context context){
+        try {
+            InputStream  in = new FileInputStream(f.filePath);
+            FileOutputStream fs1 = new FileOutputStream(f.filePath + "sh1");
+            FileOutputStream fs2 = new FileOutputStream(f.filePath + "sh2");
+            byte[] buffer = new byte[1024 * 1024];
+            int length;
+            int count = 0;
+            while((length = in.read(buffer)) != -1){
+                if(count % 2 == 0){
+                    fs1.write(buffer, 0, length);
+                }else{
+                    fs2.write(buffer, 0, length);
+                }
+                count ++;
+            }
+            in.close();
+            File file = new File(f.filePath);
+            file.delete();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        PrivateDatabaseHelper.getInstance(context).insert(f.fileName, f.filePath);
+        return true;
+    }
+
+    public boolean DecryptFile(FileInfo f, Context context){
+        Log.d("shanlihou", f.fileName);
+        if(!f.fileName.equals("shily")){
+            return false;
+        }
+        Log.d("shanlihou", "shily decrypt");
+        Cursor cursor = PrivateDatabaseHelper.getInstance(context).query();
+        int count = cursor.getCount();
+        Toast.makeText(context, "" + count, Toast.LENGTH_SHORT).show();
+        cursor.moveToNext();
+        while(cursor.moveToNext()){
+            Log.d("shanlihou", "cursor name:" + cursor.getString(2));
+            DecryptFile(cursor.getString(2));
+            PrivateDatabaseHelper.getInstance(context).delete(cursor.getString(2));
+        }
+        return true;
+    }
+    public boolean DecryptFile(String f){
+        try {
+            FileOutputStream fs = new FileOutputStream(f);
+            InputStream fs1 = new FileInputStream(f + "sh1");
+            InputStream fs2 = new FileInputStream(f + "sh2");
+            byte[] buffer = new byte[1024 * 1024];
+            int length1 = 0, length2 = 0;
+            while(length1 != -1 || length2 != -1){
+                length1 = fs1.read(buffer);
+                if(length1 != -1){
+                    fs.write(buffer, 0, length1);
+                }
+                length2 = fs2.read(buffer);
+                if(length2 != -1){
+                    fs.write(buffer, 0, length2);
+                }
+            }
+            fs1.close();
+            fs2.close();
+
+            File file1 = new File(f + "sh1");
+            File file2 = new File(f + "sh2");
+            file1.delete();
+            file2.delete();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return true;
     }
 
     private void copyFileList(ArrayList<FileInfo> files) {

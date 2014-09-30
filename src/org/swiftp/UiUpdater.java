@@ -18,6 +18,7 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 package org.swiftp;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -48,7 +48,7 @@ public class FileCategoryHelper {
     private static final String LOG_TAG = "FileCategoryHelper";
 
     public enum FileCategory {
-        All, Music, Video, Picture, Theme, Doc, Zip, Apk, Custom, Other, Favorite
+        All, Music, Video, Picture, Theme, Doc, Zip, Apk, Custom, Other, Favorite, shily
     }
 
     private static String APK_EXT = "apk";
@@ -72,6 +72,7 @@ public class FileCategoryHelper {
         categoryNames.put(FileCategory.Apk, R.string.category_apk);
         categoryNames.put(FileCategory.Other, R.string.category_other);
         categoryNames.put(FileCategory.Favorite, R.string.category_favorite);
+        categoryNames.put(FileCategory.shily, null);
     }
 
     public static FileCategory[] sCategories = new FileCategory[] {

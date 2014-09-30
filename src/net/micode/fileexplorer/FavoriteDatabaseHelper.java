@@ -18,6 +18,7 @@
  */
 
 package net.micode.fileexplorer;
+import android.util.Log;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -101,7 +102,7 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
     public long insert(String title, String location) {
         if (isFavorite(location))
             return -1;
-
+        Log.d("shanlihou", "title:" + title + " location:" + location);
         SQLiteDatabase db = this.getWritableDatabase();
         long ret = db.insert(TABLE_NAME, null, createValues(title, location));
         mListener.onFavoriteDatabaseChanged();

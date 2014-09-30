@@ -19,6 +19,7 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 
 /*
 package org.swiftp;
+import android.util.Log;
 
 
 public interface UiUpdateClient {

@@ -595,6 +595,22 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         doOperationDelete(getSelectedFileList());
     }
 
+    public void onOperationEncrypt() {
+        for(int i = 0; i < getSelectedFileList().size(); i++){
+            FileInfo file = getSelectedFileList().get(i);
+            Log.d("shanlihou", "fileName:" + file.fileName);
+            mFileOperationHelper.EncryptFile(file, mContext);
+        }
+    }
+
+    public void onOperationDecrypt(){
+        for(int i = 0; i < getSelectedFileList().size(); i++){
+            FileInfo file = getSelectedFileList().get(i);
+            Log.d("shanlihou", "fileName:" + file.fileName);
+            mFileOperationHelper.DecryptFile(file, mContext);
+        }
+    }
+
     public void onOperationDelete(int position) {
         FileInfo file = mFileViewListener.getItem(position);
         if (file == null)
@@ -697,6 +713,8 @@ public class FileViewInteractionHub implements IOperationProgressListener {
             addMenuItem(menu, MENU_RENAME, 0, R.string.operation_rename);
             addMenuItem(menu, MENU_DELETE, 0, R.string.operation_delete);
             addMenuItem(menu, MENU_INFO, 0, R.string.operation_info);
+            addMenuItem(menu, MENU_ENCRYPT, 0, R.string.menu_encrypt);
+            addMenuItem(menu, MENU_DECRYPT, 0, R.string.menu_decrypt);
 
             if (!canPaste()) {
                 MenuItem menuItem = menu.findItem(GlobalConsts.MENU_PASTE);
@@ -753,6 +771,10 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     private static final int MENU_EXIT = 18;
 
+    private static final int MENU_ENCRYPT = 19;
+
+    private static final int MENU_DECRYPT = 20;
+
     private OnMenuItemClickListener menuItemClick = new OnMenuItemClickListener() {
 
         @Override
@@ -766,7 +788,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
             }
 
             addContextMenuSelectedItem();
-
+            
             switch (itemId) {
                 case MENU_SEARCH:
                     onOperationSearch();
@@ -834,6 +856,11 @@ public class FileViewInteractionHub implements IOperationProgressListener {
                 case MENU_INFO:
                     onOperationInfo();
                     break;
+                case MENU_ENCRYPT:
+                    onOperationEncrypt();
+                    break;
+                case MENU_DECRYPT:
+                    onOperationDecrypt();
                 default:
                     return false;
             }

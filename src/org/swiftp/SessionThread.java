@@ -403,9 +403,9 @@ public class SessionThread extends Thread {
     }
 
     /*
-     * public FTPServerService getService() { return service; }
+     * public FTPServerService getService() {
      * 
-     * public void setService(FTPServerService service) { this.service =
+     * public void setService(FTPServerService service) {
      * service; }
      */
 
