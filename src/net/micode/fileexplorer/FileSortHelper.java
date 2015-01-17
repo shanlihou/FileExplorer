@@ -43,26 +43,26 @@ public class FileSortHelper {
         mComparatorList.put(SortMethod.type, cmpType);
     }
 
-    public void setSortMethog(SortMethod s) {
+    public void setSortMethog(SortMethod s) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: setSortMethog");
         mSort = s;
     }
 
-    public SortMethod getSortMethod() {
+    public SortMethod getSortMethod() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: getSortMethod");
         return mSort;
     }
 
-    public void setFileFirst(boolean f) {
+    public void setFileFirst(boolean f) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: setFileFirst");
         mFileFirst = f;
     }
 
-    public Comparator getComparator() {
+    public Comparator getComparator() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: getComparator");
         return mComparatorList.get(mSort);
     }
 
     private abstract class FileComparator implements Comparator<FileInfo> {
 
         @Override
-        public int compare(FileInfo object1, FileInfo object2) {
+        public int compare(FileInfo object1, FileInfo object2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: compare");
             if (object1.IsDir == object2.IsDir) {
                 return doCompare(object1, object2);
             }
@@ -81,32 +81,32 @@ public class FileSortHelper {
 
     private Comparator cmpName = new FileComparator() {
         @Override
-        public int doCompare(FileInfo object1, FileInfo object2) {
+        public int doCompare(FileInfo object1, FileInfo object2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: doCompare");
             return object1.fileName.compareToIgnoreCase(object2.fileName);
         }
     };
 
     private Comparator cmpSize = new FileComparator() {
         @Override
-        public int doCompare(FileInfo object1, FileInfo object2) {
+        public int doCompare(FileInfo object1, FileInfo object2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: doCompare");
             return longToCompareInt(object1.fileSize - object2.fileSize);
         }
     };
 
     private Comparator cmpDate = new FileComparator() {
         @Override
-        public int doCompare(FileInfo object1, FileInfo object2) {
+        public int doCompare(FileInfo object1, FileInfo object2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: doCompare");
             return longToCompareInt(object2.ModifiedDate - object1.ModifiedDate);
         }
     };
 
-    private int longToCompareInt(long result) {
+    private int longToCompareInt(long result) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: longToCompareInt");
         return result > 0 ? 1 : (result < 0 ? -1 : 0);
     }
 
     private Comparator cmpType = new FileComparator() {
         @Override
-        public int doCompare(FileInfo object1, FileInfo object2) {
+        public int doCompare(FileInfo object1, FileInfo object2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileSortHelper.java: doCompare");
             int result = Util.getExtFromFilename(object1.fileName).compareToIgnoreCase(
                     Util.getExtFromFilename(object2.fileName));
             if (result != 0)

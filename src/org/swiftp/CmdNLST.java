@@ -41,7 +41,7 @@ public class CmdNLST extends CmdAbstractListing implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdNLST.java: run");
 		String errString = null;
 		
 		mainblock: {

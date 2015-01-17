@@ -26,11 +26,11 @@ public class ProxyDataSocketInfo extends Socket {
 	private int remotePublicPort;
 	private Socket socket;
 	
-	public Socket getSocket() {
+	public Socket getSocket() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketInfo.java: getSocket");
 		return socket;
 	}
 
-	public void setSocket(Socket socket) {
+	public void setSocket(Socket socket) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketInfo.java: setSocket");
 		this.socket = socket;
 	}
 
@@ -39,11 +39,11 @@ public class ProxyDataSocketInfo extends Socket {
 		this.socket = socket;
 	}
 	
-	public int getRemotePublicPort() {
+	public int getRemotePublicPort() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketInfo.java: getRemotePublicPort");
 		return remotePublicPort;
 	}
 
-	public void setRemotePublicPort(int remotePublicPort) {
+	public void setRemotePublicPort(int remotePublicPort) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketInfo.java: setRemotePublicPort");
 		this.remotePublicPort = remotePublicPort;
 	}
 	

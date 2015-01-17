@@ -127,19 +127,19 @@ public class MediaFile {
         addFileType("WEBP", FILE_TYPE_WEBP, "image/webp");
     }
 
-    public static boolean isAudioFileType(int fileType) {
+    public static boolean isAudioFileType(int fileType) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MediaFile.java: isAudioFileType");
         return ((fileType >= FIRST_AUDIO_FILE_TYPE && fileType <= LAST_AUDIO_FILE_TYPE) || (fileType >= FIRST_MIDI_FILE_TYPE && fileType <= LAST_MIDI_FILE_TYPE));
     }
 
-    public static boolean isVideoFileType(int fileType) {
+    public static boolean isVideoFileType(int fileType) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MediaFile.java: isVideoFileType");
         return (fileType >= FIRST_VIDEO_FILE_TYPE && fileType <= LAST_VIDEO_FILE_TYPE);
     }
 
-    public static boolean isImageFileType(int fileType) {
+    public static boolean isImageFileType(int fileType) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MediaFile.java: isImageFileType");
         return (fileType >= FIRST_IMAGE_FILE_TYPE && fileType <= LAST_IMAGE_FILE_TYPE);
     }
 
-    public static MediaFileType getFileType(String path) {
+    public static MediaFileType getFileType(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MediaFile.java: getFileType");
         int lastDot = path.lastIndexOf(".");
         if (lastDot < 0)
             return null;

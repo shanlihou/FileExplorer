@@ -31,7 +31,7 @@ public class CmdSYST extends FtpCmd implements Runnable {
 	}
 	
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdSYST.java: run");
 		myLog.l(Log.DEBUG, "SYST executing");
 		sessionThread.writeString(response);
 		myLog.l(Log.DEBUG, "SYST finished");

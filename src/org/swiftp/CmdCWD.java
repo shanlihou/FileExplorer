@@ -32,7 +32,7 @@ public class CmdCWD extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdCWD.java: run");
 		myLog.l(Log.DEBUG, "CWD executing");
 		String param = getParameter(input);
 		File newDir;

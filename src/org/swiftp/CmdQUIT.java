@@ -28,7 +28,7 @@ public class CmdQUIT extends FtpCmd implements Runnable {
 		super(sessionThread, CmdQUIT.class.toString());
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdQUIT.java: run");
 		myLog.l(Log.DEBUG, "QUITting");
 		sessionThread.writeString("221 Goodbye\r\n");
 		sessionThread.closeSocket();

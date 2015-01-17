@@ -31,7 +31,7 @@ public class CmdMKD extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdMKD.java: run");
 		myLog.l(Log.DEBUG, "MKD executing");
 		String param = getParameter(input);
 		File toCreate;

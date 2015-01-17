@@ -50,7 +50,7 @@ public class TextInputDialog extends AlertDialog {
         mContext = context;
     }
 
-    public String getInputText() {
+    public String getInputText() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/TextInputDialog.java: getInputText");
         return mInputText;
     }
 
@@ -67,7 +67,7 @@ public class TextInputDialog extends AlertDialog {
         setButton(BUTTON_POSITIVE, mContext.getString(android.R.string.ok),
                 new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialog, int which) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/TextInputDialog.java: onClick");
                         if (which == BUTTON_POSITIVE) {
                             mInputText = mFolderName.getText().toString();
                             if (mListener.onFinish(mInputText)) {

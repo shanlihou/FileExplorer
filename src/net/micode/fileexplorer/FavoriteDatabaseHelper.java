@@ -56,12 +56,12 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
         mListener = listener;
     }
 
-    public static FavoriteDatabaseHelper getInstance() {
+    public static FavoriteDatabaseHelper getInstance() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: getInstance");
         return instance;
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: onCreate");
         String sql = "Create table " + TABLE_NAME + "(" + FIELD_ID + " integer primary key autoincrement,"
                 + FIELD_TITLE + " text, " + FIELD_LOCATION + " text );";
         db.execSQL(sql);
@@ -69,17 +69,17 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: onUpgrade");
         String sql = " DROP TABLE IF EXISTS " + TABLE_NAME;
         db.execSQL(sql);
         onCreate(db);
     }
 
-    public boolean isFirstCreate() {
+    public boolean isFirstCreate() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: isFirstCreate");
         return firstCreate;
     }
 
-    public boolean isFavorite(String path) {
+    public boolean isFavorite(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: isFavorite");
         String selection = FIELD_LOCATION + "=?";
         String[] selectionArgs = new String[] {
             path
@@ -93,13 +93,13 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
         return ret;
     }
 
-    public Cursor query() {
+    public Cursor query() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: query");
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, null);
         return cursor;
     }
 
-    public long insert(String title, String location) {
+    public long insert(String title, String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: insert");
         if (isFavorite(location))
             return -1;
         Log.d("shanlihou", "title:" + title + " location:" + location);
@@ -109,7 +109,7 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
         return ret;
     }
 
-    public void delete(long id, boolean notify) {
+    public void delete(long id, boolean notify) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: delete");
         SQLiteDatabase db = this.getWritableDatabase();
         String where = FIELD_ID + "=?";
         String[] whereValue = {
@@ -121,7 +121,7 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
             mListener.onFavoriteDatabaseChanged();
     }
 
-    public void delete(String location) {
+    public void delete(String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: delete");
         SQLiteDatabase db = this.getWritableDatabase();
         String where = FIELD_LOCATION + "=?";
         String[] whereValue = {
@@ -131,7 +131,7 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
         mListener.onFavoriteDatabaseChanged();
     }
 
-    public void update(int id, String title, String location) {
+    public void update(int id, String title, String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: update");
         SQLiteDatabase db = this.getWritableDatabase();
         String where = FIELD_ID + "=?";
         String[] whereValue = {
@@ -141,7 +141,7 @@ public class FavoriteDatabaseHelper extends SQLiteOpenHelper {
         mListener.onFavoriteDatabaseChanged();
     }
 
-    private ContentValues createValues(String title, String location) {
+    private ContentValues createValues(String title, String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteDatabaseHelper.java: createValues");
         ContentValues cv = new ContentValues();
         cv.put(FIELD_TITLE, title);
         cv.put(FIELD_LOCATION, location);

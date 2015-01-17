@@ -29,18 +29,18 @@ public class Settings {
 
     }
 
-    public static Settings instance() {
+    public static Settings instance() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Settings.java: instance");
         if(mInstance == null) {
             mInstance = new Settings();
         }
         return mInstance;
     }
 
-    public boolean getShowDotAndHiddenFiles() {
+    public boolean getShowDotAndHiddenFiles() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Settings.java: getShowDotAndHiddenFiles");
         return mShowDotAndHiddenFiles;
     }
 
-    public void setShowDotAndHiddenFiles(boolean s) {
+    public void setShowDotAndHiddenFiles(boolean s) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Settings.java: setShowDotAndHiddenFiles");
         mShowDotAndHiddenFiles = s;
     }
 }

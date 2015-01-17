@@ -30,7 +30,7 @@ public class CmdOPTS extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdOPTS.java: run");
 		String param = getParameter(input);
 		String errString = null;
 		

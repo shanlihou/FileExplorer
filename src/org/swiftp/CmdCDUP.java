@@ -31,7 +31,7 @@ public class CmdCDUP extends FtpCmd implements Runnable {
 		super(sessionThread, CmdCDUP.class.toString());
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdCDUP.java: run");
 		myLog.l(Log.DEBUG, "CDUP executing");
 		File newDir;
 		String errString = null;

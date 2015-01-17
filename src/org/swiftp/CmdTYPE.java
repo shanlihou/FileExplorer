@@ -29,7 +29,7 @@ public class CmdTYPE extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdTYPE.java: run");
 		String output;
 		myLog.l(Log.DEBUG, "TYPE executing");
 		String param = getParameter(input);

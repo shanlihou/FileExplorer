@@ -24,54 +24,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: net.micode.fileexplorer" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5b1c499-2d92-43c9-87ea-33e358c6fb0d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/PrivateDatabaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/Account.java" afterPath="$PROJECT_DIR$/src/org/swiftp/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/ActivitiesManager.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/ActivitiesManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/CmdAPPE.java" afterPath="$PROJECT_DIR$/src/org/swiftp/CmdAPPE.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/CmdMap.java" afterPath="$PROJECT_DIR$/src/org/swiftp/CmdMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/CmdNOOP.java" afterPath="$PROJECT_DIR$/src/org/swiftp/CmdNOOP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/CmdOPTS.java" afterPath="$PROJECT_DIR$/src/org/swiftp/CmdOPTS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/CmdSIZE.java" afterPath="$PROJECT_DIR$/src/org/swiftp/CmdSIZE.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/CmdSTOR.java" afterPath="$PROJECT_DIR$/src/org/swiftp/CmdSTOR.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/DataSocketFactory.java" afterPath="$PROJECT_DIR$/src/org/swiftp/DataSocketFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteDatabaseHelper.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteDatabaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteItem.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteList.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteListAdapter.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryActivity.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryHelper.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerTabActivity.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerTabActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileIconHelper.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileIconHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileInfo.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileListAdapter.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileListCursorAdapter.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileListCursorAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileListItem.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileListItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileOperationHelper.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileOperationHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileSortHelper.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileSortHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileViewInteractionHub.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FileViewInteractionHub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FilenameExtFilter.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FilenameExtFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/FilenameOtherExtFilter.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/FilenameOtherExtFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/GlobalConsts.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/GlobalConsts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/Globals.java" afterPath="$PROJECT_DIR$/src/org/swiftp/Globals.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/IFileInteractionListener.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/IFileInteractionListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/InformationDialog.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/InformationDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/IntentBuilder.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/IntentBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/MediaFile.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/MediaFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/MimeUtils.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/MimeUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/ProxyDataSocketInfo.java" afterPath="$PROJECT_DIR$/src/org/swiftp/ProxyDataSocketInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/QuotaStats.java" afterPath="$PROJECT_DIR$/src/org/swiftp/QuotaStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/SearchActivity.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/SearchActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/SessionThread.java" afterPath="$PROJECT_DIR$/src/org/swiftp/SessionThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/Settings.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/micode/fileexplorer/TextInputDialog.java" afterPath="$PROJECT_DIR$/src/net/micode/fileexplorer/TextInputDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/UiUpdateClient.java" afterPath="$PROJECT_DIR$/src/org/swiftp/UiUpdateClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/swiftp/UiUpdater.java" afterPath="$PROJECT_DIR$/src/org/swiftp/UiUpdater.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-    </list>
+    <list default="true" id="b5b1c499-2d92-43c9-87ea-33e358c6fb0d" name="Default" comment="" />
     <ignored path="MiFileManager.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,193 +48,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FileViewInteractionHub.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FileViewInteractionHub.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileViewInteractionHub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.333333" vertical-offset="11726" max-vertical-offset="19620">
+            <state vertical-scroll-proportion="0.0" vertical-offset="18873" max-vertical-offset="30105">
               <caret line="716" column="70" selection-start-line="716" selection-start-column="70" selection-end-line="716" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2632#2642#0" expanded="true" />
-                <element signature="e#3777#3778#0" expanded="true" />
-                <element signature="e#3843#3844#0" expanded="true" />
-                <element signature="e#3883#3884#0" expanded="true" />
-                <element signature="e#3958#3959#0" expanded="true" />
-                <element signature="e#4548#4549#0" expanded="true" />
-                <element signature="e#4591#4592#0" expanded="true" />
-                <element signature="e#4624#4625#0" expanded="true" />
-                <element signature="e#4678#4679#0" expanded="true" />
-                <element signature="e#5181#5182#0" expanded="true" />
-                <element signature="e#5234#5235#0" expanded="true" />
-                <element signature="e#5272#5273#0" expanded="true" />
-                <element signature="e#5326#5327#0" expanded="true" />
-                <element signature="e#5362#5363#0" expanded="true" />
-                <element signature="e#5454#5455#0" expanded="true" />
-                <element signature="e#8197#8198#0" expanded="true" />
-                <element signature="e#8230#8231#0" expanded="true" />
-                <element signature="e#9213#9238#0" expanded="true" />
-                <element signature="e#9365#9388#0" expanded="true" />
-                <element signature="e#13378#13447#0" expanded="true" />
-                <element signature="e#13449#13509#0" expanded="true" />
-                <element signature="e#13527#13571#0" expanded="true" />
-                <element signature="e#14238#14288#0" expanded="true" />
-                <element signature="e#14329#14345#0" expanded="true" />
-                <element signature="e#14707#14708#0" expanded="true" />
-                <element signature="e#14761#14762#0" expanded="true" />
-                <element signature="e#15646#15692#0" expanded="true" />
-                <element signature="e#16660#16684#0" expanded="true" />
-                <element signature="e#16811#16834#0" expanded="true" />
-                <element signature="e#17758#17794#0" expanded="true" />
-                <element signature="e#17814#17830#0" expanded="true" />
-                <element signature="e#18632#18677#0" expanded="true" />
-                <element signature="e#18695#18748#0" expanded="true" />
-                <element signature="e#19330#19373#0" expanded="true" />
-                <element signature="e#19414#19430#0" expanded="true" />
-                <element signature="e#20391#20392#0" expanded="true" />
-                <element signature="e#20447#20448#0" expanded="true" />
-                <element signature="e#21513#21523#0" expanded="true" />
-                <element signature="e#21629#21690#0" expanded="true" />
-                <element signature="e#21727#21743#0" expanded="true" />
-                <element signature="e#21745#22140#0" expanded="true" />
-                <element signature="e#21983#22030#0" expanded="true" />
-                <element signature="e#22121#22122#0" expanded="true" />
-                <element signature="e#22160#22175#0" expanded="true" />
-                <element signature="e#23201#23246#0" expanded="true" />
-                <element signature="e#23961#25789#0" expanded="true" />
-                <element signature="e#24598#24627#0" expanded="true" />
-                <element signature="e#24654#24681#0" expanded="true" />
-                <element signature="e#24831#24854#0" expanded="true" />
-                <element signature="e#24919#24947#0" expanded="true" />
-                <element signature="e#25110#25133#0" expanded="true" />
-                <element signature="e#25180#25203#0" expanded="true" />
-                <element signature="e#25252#25277#0" expanded="true" />
-                <element signature="e#25326#25351#0" expanded="true" />
-                <element signature="e#25398#25421#0" expanded="true" />
-                <element signature="e#25471#25492#0" expanded="true" />
-                <element signature="e#25542#25563#0" expanded="true" />
-                <element signature="e#25782#25783#0" expanded="true" />
-                <element signature="e#27339#30628#0" expanded="true" />
-                <element signature="e#30620#30621#0" expanded="true" />
-                <element signature="e#31121#31149#0" expanded="true" />
-                <element signature="e#31260#31283#0" expanded="true" />
-                <element signature="e#31385#31413#0" expanded="true" />
-                <element signature="e#31465#31493#0" expanded="true" />
-                <element signature="e#31545#31573#0" expanded="true" />
-                <element signature="e#31625#31653#0" expanded="true" />
-                <element signature="e#31908#31940#0" expanded="true" />
-                <element signature="e#32047#32074#0" expanded="true" />
-                <element signature="e#32186#32213#0" expanded="true" />
-                <element signature="e#32304#32330#0" expanded="true" />
-                <element signature="e#32420#32441#0" expanded="true" />
-                <element signature="e#32514#32532#0" expanded="true" />
-                <element signature="e#33332#33367#0" expanded="true" />
-                <element signature="e#33370#33398#0" expanded="true" />
-                <element signature="e#33661#33688#0" expanded="true" />
-                <element signature="e#33711#33738#0" expanded="true" />
-                <element signature="e#34051#34080#0" expanded="true" />
-                <element signature="e#34107#34134#0" expanded="true" />
-                <element signature="e#34220#34221#0" expanded="true" />
-                <element signature="e#34288#34289#0" expanded="true" />
-                <element signature="e#34323#34324#0" expanded="true" />
-                <element signature="e#34355#34356#0" expanded="true" />
-                <element signature="e#34384#34385#0" expanded="true" />
-                <element signature="e#34419#34420#0" expanded="true" />
-                <element signature="e#36322#36323#0" expanded="true" />
-                <element signature="e#36350#36351#0" expanded="true" />
-                <element signature="e#36388#36389#0" expanded="true" />
-                <element signature="e#36423#36424#0" expanded="true" />
-                <element signature="e#36470#36471#0" expanded="true" />
-                <element signature="e#36505#36506#0" expanded="true" />
-                <element signature="e#37080#37081#0" expanded="true" />
-                <element signature="e#37131#37132#0" expanded="true" />
-                <element signature="e#37335#37336#0" expanded="true" />
-                <element signature="e#37390#37391#0" expanded="true" />
-                <element signature="e#38415#38416#0" expanded="true" />
-                <element signature="e#38463#38464#0" expanded="true" />
-                <element signature="e#39106#39107#0" expanded="true" />
-                <element signature="e#39151#39152#0" expanded="true" />
+                <element signature="e#26861#26871#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.72" vertical-offset="1486" max-vertical-offset="1998">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2781" max-vertical-offset="2997">
               <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileOperationHelper.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FileOperationHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileOperationHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6423841" vertical-offset="4929" max-vertical-offset="6120">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8424" max-vertical-offset="9693">
               <caret line="338" column="83" selection-start-line="338" selection-start-column="83" selection-end-line="338" selection-end-column="83" />
-              <folding>
-                <element signature="e#4208#4581#0" expanded="true" />
-                <element signature="e#4570#4571#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileExplorerTabActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FileExplorerTabActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerTabActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2538" max-vertical-offset="3348">
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="5292">
               <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileExplorerPreferenceActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FileExplorerPreferenceActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="1656">
+            <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="2592">
               <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileCategoryActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FileCategoryActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2617" max-vertical-offset="9864">
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="16038">
               <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryBar.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CategoryBar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/CategoryBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2862">
-              <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-              <folding />
+            <state vertical-scroll-proportion="0.627907" vertical-offset="243" max-vertical-offset="5076">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#6463#0" expanded="true" />
+                <element signature="e#1883#1884#0" expanded="true" />
+                <element signature="e#1918#1919#0" expanded="true" />
+                <element signature="e#1981#1982#0" expanded="true" />
+                <element signature="e#2020#2021#0" expanded="true" />
+                <element signature="e#2097#2098#0" expanded="true" />
+                <element signature="e#2144#2145#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileCategoryHelper.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FileCategoryHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="5166">
+            <state vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="8019">
               <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrivateDatabaseHelper.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PrivateDatabaseHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/PrivateDatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="1530">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1269" max-vertical-offset="2295">
               <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -299,23 +165,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/FavoriteDatabaseHelper.java" />
-        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/ActivitiesManager.java" />
-        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/PrivateDatabaseHelper.java" />
-        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryHelper.java" />
-        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/FileViewInteractionHub.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/FileOperationHelper.java" />
+        <option value="$PROJECT_DIR$/src/net/micode/fileexplorer/CategoryBar.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="22" />
-    <option name="width" value="1377" />
-    <option name="height" value="905" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -343,132 +203,60 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
+              <option name="myItemId" value="mifile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
+              <option name="myItemId" value="mifile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="mifile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
+              <option name="myItemId" value="mifile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="mifile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swiftp" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
+              <option name="myItemId" value="mifile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="mifile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fileexplorer" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values-zh-rCN" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiFileManager" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,39 +268,11 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="5210a55d" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="onePlus" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Android Application.MiFileManager">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Android Application.mifile">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -521,61 +281,8 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -615,7 +322,113 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="mifile" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="mifile" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -653,9 +466,10 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Android Application.MiFileManager" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.mifile" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Unnamed" />
+      <item index="2" class="java.lang.String" itemvalue="Android Application.MiFileManager" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -672,40 +486,43 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="b5b1c499-2d92-43c9-87ea-33e358c6fb0d" name="Default" comment="" />
       <created>1412042550263</created>
+      <option name="number" value="Default" />
       <updated>1412042550263</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="22" width="1377" height="905" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945454" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32004982" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24945454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31995776" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945454" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -726,27 +543,105 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/swiftp/Account.java">
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileViewInteractionHub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="648">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="18279" max-vertical-offset="29430">
+          <caret line="716" column="70" selection-start-line="716" selection-start-column="70" selection-end-line="716" selection-end-column="70" />
           <folding>
-            <element signature="e#0#900#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2632#2642#0" expanded="true" />
+            <element signature="e#26861#26871#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/swiftp/CmdAbstractListing.java">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1764">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2781" max-vertical-offset="2997">
+          <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileOperationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9180">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerTabActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="5022">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="2592">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="14796">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/CategoryBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1728" max-vertical-offset="4293">
+          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#6463#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+            <element signature="e#1981#1982#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+            <element signature="e#2097#2098#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="7749">
+          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/PrivateDatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1269" max-vertical-offset="2295">
+          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/swiftp/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="648">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -754,7 +649,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1764">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/swiftp/CmdAbstractListing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1764">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -762,9 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="702">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#900#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,14 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="25.12" vertical-offset="628" max-vertical-offset="1962">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/xp/adt-bundle-linux-x86_64/adt-bundle-linux-x86_64/sdk/platforms/android-17/android.jar!/java/io/File.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33263597" vertical-offset="1695" max-vertical-offset="2268">
-          <caret line="104" column="19" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -799,14 +689,6 @@
           <folding>
             <element signature="e#956#970#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/xp/adt-bundle-linux-x86_64/adt-bundle-linux-x86_64/sdk/platforms/android-17/android.jar!/android/content/ContentValues.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12448133" vertical-offset="0" max-vertical-offset="1512">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,14 +725,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/category_file_browser_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="24.277779" vertical-offset="1311" max-vertical-offset="1980">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileExplorerTabActivity.java">
@@ -877,14 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/CategoryBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1728" max-vertical-offset="2862">
-          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileCategoryHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="5166">
@@ -907,7 +781,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.72" vertical-offset="1486" max-vertical-offset="1998">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2781" max-vertical-offset="2997">
           <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
           <folding />
         </state>
@@ -915,127 +789,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileViewInteractionHub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333" vertical-offset="11726" max-vertical-offset="19620">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18279" max-vertical-offset="29430">
           <caret line="716" column="70" selection-start-line="716" selection-start-column="70" selection-end-line="716" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2632#2642#0" expanded="true" />
-            <element signature="e#3777#3778#0" expanded="true" />
-            <element signature="e#3843#3844#0" expanded="true" />
-            <element signature="e#3883#3884#0" expanded="true" />
-            <element signature="e#3958#3959#0" expanded="true" />
-            <element signature="e#4548#4549#0" expanded="true" />
-            <element signature="e#4591#4592#0" expanded="true" />
-            <element signature="e#4624#4625#0" expanded="true" />
-            <element signature="e#4678#4679#0" expanded="true" />
-            <element signature="e#5181#5182#0" expanded="true" />
-            <element signature="e#5234#5235#0" expanded="true" />
-            <element signature="e#5272#5273#0" expanded="true" />
-            <element signature="e#5326#5327#0" expanded="true" />
-            <element signature="e#5362#5363#0" expanded="true" />
-            <element signature="e#5454#5455#0" expanded="true" />
-            <element signature="e#8197#8198#0" expanded="true" />
-            <element signature="e#8230#8231#0" expanded="true" />
-            <element signature="e#9213#9238#0" expanded="true" />
-            <element signature="e#9365#9388#0" expanded="true" />
-            <element signature="e#13378#13447#0" expanded="true" />
-            <element signature="e#13449#13509#0" expanded="true" />
-            <element signature="e#13527#13571#0" expanded="true" />
-            <element signature="e#14238#14288#0" expanded="true" />
-            <element signature="e#14329#14345#0" expanded="true" />
-            <element signature="e#14707#14708#0" expanded="true" />
-            <element signature="e#14761#14762#0" expanded="true" />
-            <element signature="e#15646#15692#0" expanded="true" />
-            <element signature="e#16660#16684#0" expanded="true" />
-            <element signature="e#16811#16834#0" expanded="true" />
-            <element signature="e#17758#17794#0" expanded="true" />
-            <element signature="e#17814#17830#0" expanded="true" />
-            <element signature="e#18632#18677#0" expanded="true" />
-            <element signature="e#18695#18748#0" expanded="true" />
-            <element signature="e#19330#19373#0" expanded="true" />
-            <element signature="e#19414#19430#0" expanded="true" />
-            <element signature="e#20391#20392#0" expanded="true" />
-            <element signature="e#20447#20448#0" expanded="true" />
-            <element signature="e#21513#21523#0" expanded="true" />
-            <element signature="e#21629#21690#0" expanded="true" />
-            <element signature="e#21727#21743#0" expanded="true" />
-            <element signature="e#21745#22140#0" expanded="true" />
-            <element signature="e#21983#22030#0" expanded="true" />
-            <element signature="e#22121#22122#0" expanded="true" />
-            <element signature="e#22160#22175#0" expanded="true" />
-            <element signature="e#23201#23246#0" expanded="true" />
-            <element signature="e#23961#25789#0" expanded="true" />
-            <element signature="e#24598#24627#0" expanded="true" />
-            <element signature="e#24654#24681#0" expanded="true" />
-            <element signature="e#24831#24854#0" expanded="true" />
-            <element signature="e#24919#24947#0" expanded="true" />
-            <element signature="e#25110#25133#0" expanded="true" />
-            <element signature="e#25180#25203#0" expanded="true" />
-            <element signature="e#25252#25277#0" expanded="true" />
-            <element signature="e#25326#25351#0" expanded="true" />
-            <element signature="e#25398#25421#0" expanded="true" />
-            <element signature="e#25471#25492#0" expanded="true" />
-            <element signature="e#25542#25563#0" expanded="true" />
-            <element signature="e#25782#25783#0" expanded="true" />
-            <element signature="e#27339#30628#0" expanded="true" />
-            <element signature="e#30620#30621#0" expanded="true" />
-            <element signature="e#31121#31149#0" expanded="true" />
-            <element signature="e#31260#31283#0" expanded="true" />
-            <element signature="e#31385#31413#0" expanded="true" />
-            <element signature="e#31465#31493#0" expanded="true" />
-            <element signature="e#31545#31573#0" expanded="true" />
-            <element signature="e#31625#31653#0" expanded="true" />
-            <element signature="e#31908#31940#0" expanded="true" />
-            <element signature="e#32047#32074#0" expanded="true" />
-            <element signature="e#32186#32213#0" expanded="true" />
-            <element signature="e#32304#32330#0" expanded="true" />
-            <element signature="e#32420#32441#0" expanded="true" />
-            <element signature="e#32514#32532#0" expanded="true" />
-            <element signature="e#33332#33367#0" expanded="true" />
-            <element signature="e#33370#33398#0" expanded="true" />
-            <element signature="e#33661#33688#0" expanded="true" />
-            <element signature="e#33711#33738#0" expanded="true" />
-            <element signature="e#34051#34080#0" expanded="true" />
-            <element signature="e#34107#34134#0" expanded="true" />
-            <element signature="e#34220#34221#0" expanded="true" />
-            <element signature="e#34288#34289#0" expanded="true" />
-            <element signature="e#34323#34324#0" expanded="true" />
-            <element signature="e#34355#34356#0" expanded="true" />
-            <element signature="e#34384#34385#0" expanded="true" />
-            <element signature="e#34419#34420#0" expanded="true" />
-            <element signature="e#36322#36323#0" expanded="true" />
-            <element signature="e#36350#36351#0" expanded="true" />
-            <element signature="e#36388#36389#0" expanded="true" />
-            <element signature="e#36423#36424#0" expanded="true" />
-            <element signature="e#36470#36471#0" expanded="true" />
-            <element signature="e#36505#36506#0" expanded="true" />
-            <element signature="e#37080#37081#0" expanded="true" />
-            <element signature="e#37131#37132#0" expanded="true" />
-            <element signature="e#37335#37336#0" expanded="true" />
-            <element signature="e#37390#37391#0" expanded="true" />
-            <element signature="e#38415#38416#0" expanded="true" />
-            <element signature="e#38463#38464#0" expanded="true" />
-            <element signature="e#39106#39107#0" expanded="true" />
-            <element signature="e#39151#39152#0" expanded="true" />
+            <element signature="e#26861#26871#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/xp/adt-bundle-linux-x86_64/adt-bundle-linux-x86_64/sdk/platforms/android-17/android.jar!/android/database/Cursor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="609" max-vertical-offset="1854">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/FileOperationHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6423841" vertical-offset="4929" max-vertical-offset="6120">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7830" max-vertical-offset="9180">
           <caret line="338" column="83" selection-start-line="338" selection-start-column="83" selection-end-line="338" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/micode/fileexplorer/CategoryBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.627907" vertical-offset="243" max-vertical-offset="5076">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
           <folding>
-            <element signature="e#4208#4581#0" expanded="true" />
-            <element signature="e#4570#4571#0" expanded="true" />
+            <element signature="e#0#6463#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+            <element signature="e#1981#1982#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+            <element signature="e#2097#2098#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1130,4 +913,3 @@
     </states>
   </component>
 </project>
-

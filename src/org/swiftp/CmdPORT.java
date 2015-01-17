@@ -33,7 +33,7 @@ public class CmdPORT extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdPORT.java: run");
 		myLog.l(Log.DEBUG, "PORT running");
 		String errString = null;
 		mainBlock: {

@@ -84,7 +84,7 @@ public class ProxyConnector extends Thread {
 		Globals.setProxyConnector(this);
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: run");
 		myLog.i("In ProxyConnector.run()");
 		setProxyState(State.CONNECTING);
 		try {
@@ -192,9 +192,9 @@ public class ProxyConnector extends Thread {
 	// The short story is, if the main ProxyConnector command session thread wants to
 	// make a request, the easiest way is to spawn a new thread and have it call
 	// sendCmdSocketRequest in the same way as any other thread. 
-	//private Thread spawnQuotaRequester() {
+	//private Thread spawnQuotaRequester() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: spawnQuotaRequester");
 	//	return new Thread() {
-	//		public void run() {
+	//		public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: run");
 	//			getQuotaStats(false);
 	//		}
 	//	};
@@ -205,7 +205,7 @@ public class ProxyConnector extends Thread {
 	 * and we may want to explicitly redirect some devices to other servers,
 	 * we have this mechanism to store a "preferred server" on the device. 
 	 */
-	private void preferServer(String hostname) {
+	private void preferServer(String hostname) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: preferServer");
 		SharedPreferences prefs = Globals.getContext()
 			.getSharedPreferences(PREFERRED_SERVER, 0);
 		SharedPreferences.Editor editor = prefs.edit();
@@ -266,7 +266,7 @@ public class ProxyConnector extends Thread {
 	
 	
 	private boolean checkAndPrintJsonError(JSONObject json) throws JSONException {
-		if(json.has("error_code")) {
+		if(json.has("error_code")) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: checkAndPrintJsonError");
 			// The returned JSON object will have a field called "errorCode"
 			// if there was a problem executing our request.
 			StringBuilder s = new StringBuilder(
@@ -298,7 +298,7 @@ public class ProxyConnector extends Thread {
 	 * @return The secret, if present, or null.
 	 */
 	//Obsolete, there's no authentication anymore
-	/*private String retrieveSecret() {
+	/*private String retrieveSecret() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: retrieveSecret");
 		SharedPreferences settings = Globals.getContext().
 			getSharedPreferences(Defaults.getSettingsName(),
 			Defaults.getSettingsMode());
@@ -306,7 +306,7 @@ public class ProxyConnector extends Thread {
 	}*/
 	
 	//Obsolete, there's no authentication anymore
-	/*private void storeSecret(String secret) {
+	/*private void storeSecret(String secret) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: storeSecret");
 		SharedPreferences settings = Globals.getContext().
 			getSharedPreferences(Defaults.getSettingsName(),
 			Defaults.getSettingsMode());
@@ -316,7 +316,7 @@ public class ProxyConnector extends Thread {
 	}*/
 	
 	//Obsolete, there's no authentication anymore
-	/*private void removeSecret() {
+	/*private void removeSecret() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: removeSecret");
 		SharedPreferences settings = Globals.getContext().
 			getSharedPreferences(Defaults.getSettingsName(),
 					Defaults.getSettingsMode());
@@ -325,7 +325,7 @@ public class ProxyConnector extends Thread {
 		editor.commit();
 	}*/
 	
-	private void incomingCommand(JSONObject json) {
+	private void incomingCommand(JSONObject json) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: incomingCommand");
 		try {
 			String action = json.getString("action");
 			if(action.equals("control_connection_waiting")) {
@@ -349,7 +349,7 @@ public class ProxyConnector extends Thread {
 		}
 	}
 	
-	private void startControlSession(int port) {
+	private void startControlSession(int port) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: startControlSession");
 		Socket socket;
 		myLog.d("Starting new proxy FTP control session");
 		socket = newAuthedSocket(hostname, port);
@@ -368,7 +368,7 @@ public class ProxyConnector extends Thread {
 	 * Connects an outgoing socket to the proxy and authenticates, creating an account
 	 * if necessary.
 	 */
-	private Socket newAuthedSocket(String hostname, int port) {
+	private Socket newAuthedSocket(String hostname, int port) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: newAuthedSocket");
 		if(hostname == null) {
 			myLog.i("newAuthedSocket can't connect to null host");
 			return null;
@@ -416,7 +416,7 @@ public class ProxyConnector extends Thread {
 		}
 	}
 	
-	public void quit() {
+	public void quit() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: quit");
 		setProxyState(State.DISCONNECTED);
 		try {
 			sendRequest(commandSocket, makeJsonRequest("finished")); // ignore reply
@@ -440,7 +440,7 @@ public class ProxyConnector extends Thread {
 		Globals.setProxyConnector(null);
 	}
 	
-	private JSONObject sendCmdSocketRequest(JSONObject json) {
+	private JSONObject sendCmdSocketRequest(JSONObject json) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: sendCmdSocketRequest");
 		try {
 			boolean queued;
 			synchronized(this) {
@@ -539,7 +539,7 @@ public class ProxyConnector extends Thread {
 			out.write(Util.jsonToByteArray(request));
 			byte[] bytes = new byte[IN_BUF_SIZE];
 			int numBytes = in.read(bytes);
-			if(numBytes < 1) {
+			if(numBytes < 1) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: sendRequest");
 				myLog.i("Proxy sendRequest short read on response");
 				return null;
 			}
@@ -561,7 +561,7 @@ public class ProxyConnector extends Thread {
 	public JSONObject sendRequest(Socket socket, JSONObject request) 
 	throws JSONException {
 		 try {
-			 if(socket == null) {
+			 if(socket == null) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: sendRequest");
 				 // The server is probably shutting down
 				 myLog.i("null socket in ProxyConnector.sendRequest()");
 				 return null;
@@ -576,7 +576,7 @@ public class ProxyConnector extends Thread {
 		 }
 	}
 	
-	public ProxyDataSocketInfo pasvListen() {
+	public ProxyDataSocketInfo pasvListen() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: pasvListen");
 		try {
 			// connect to proxy and authenticate
 			myLog.d("Sending data_pasv_listen to proxy");
@@ -599,7 +599,7 @@ public class ProxyConnector extends Thread {
 		}
 	}
 	
-	public Socket dataPortConnect(InetAddress clientAddr, int clientPort) {
+	public Socket dataPortConnect(InetAddress clientAddr, int clientPort) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: dataPortConnect");
 		/** 
 		 * This function is called by a ProxyDataSocketFactory when it's time to
 		 * transfer some data in PORT mode (not PASV mode). We send a 
@@ -640,7 +640,7 @@ public class ProxyConnector extends Thread {
 	 * @return true if the accept operation completed OK, otherwise false
 	 */
 	
-	public boolean pasvAccept(Socket socket) {
+	public boolean pasvAccept(Socket socket) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: pasvAccept");
 		try {
 			JSONObject request = makeJsonRequest("data_pasv_accept");
 			JSONObject response = sendRequest(socket, request);
@@ -660,7 +660,7 @@ public class ProxyConnector extends Thread {
 		}
 	}
 	
-	public InetAddress getProxyIp() {
+	public InetAddress getProxyIp() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: getProxyIp");
 		if(this.isAlive()) {
 			if(commandSocket.isConnected()) {
 				return commandSocket.getInetAddress();
@@ -676,7 +676,7 @@ public class ProxyConnector extends Thread {
 	}
 	
 	/* Quotas have been canceled for now	  
-	  public QuotaStats getQuotaStats(boolean canUseCached) {
+	  public QuotaStats getQuotaStats(boolean canUseCached) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: getQuotaStats");
 		if(canUseCached) {
 			if(cachedQuotaStats != null) {
 				myLog.d("Returning cachedQuotaStats");
@@ -728,7 +728,7 @@ public class ProxyConnector extends Thread {
 		return prefs.getLong(USAGE_PREFS_NAME, 0); // Default count of 0
 	}
 	
-	public long getProxyUsage() {
+	public long getProxyUsage() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: getProxyUsage");
 		// This gets the running total of all proxy usage, which may not have
 		// been persisted yet.
 		return proxyUsage;
@@ -743,17 +743,17 @@ public class ProxyConnector extends Thread {
 		}
 	}
 	
-	public State getProxyState() {
+	public State getProxyState() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: getProxyState");
 		return proxyState;
 	}
 	
-	private void setProxyState(State state) {
+	private void setProxyState(State state) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: setProxyState");
 		proxyState = state;
 		myLog.l(Log.DEBUG, "Proxy state changed to " + state, true);
 		FTPServerService.updateClients(); // UI update
 	}
 	
-	static public String stateToString(State s) {
+	static public String stateToString(State s) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: stateToString");
 //		Context ctx = Globals.getContext();
 //		switch(s) {
 //		case DISCONNECTED:
@@ -775,7 +775,7 @@ public class ProxyConnector extends Thread {
 	/**
 	 * The URL to which users should point their FTP client.
 	 */
-	public String getURL() {
+	public String getURL() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: getURL");
 		if(proxyState == State.CONNECTED) {
 			String username = Globals.getUsername();
 			if(username != null) {
@@ -788,7 +788,7 @@ public class ProxyConnector extends Thread {
 	/** If the proxy sends a human-readable message, it can be retrieved by
 	 * calling this function. Returns null if no message has been received.
 	 */
-	public String getProxyMessage() {
+	public String getProxyMessage() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyConnector.java: getProxyMessage");
 		return proxyMessage;
 	}
 

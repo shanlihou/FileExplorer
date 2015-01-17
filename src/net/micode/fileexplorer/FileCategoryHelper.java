@@ -90,19 +90,19 @@ public class FileCategoryHelper {
         mCategory = FileCategory.All;
     }
 
-    public FileCategory getCurCategory() {
+    public FileCategory getCurCategory() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: getCurCategory");
         return mCategory;
     }
 
-    public void setCurCategory(FileCategory c) {
+    public void setCurCategory(FileCategory c) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: setCurCategory");
         mCategory = c;
     }
 
-    public int getCurCategoryNameResId() {
+    public int getCurCategoryNameResId() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: getCurCategoryNameResId");
         return categoryNames.get(mCategory);
     }
 
-    public void setCustomCategory(String[] exts) {
+    public void setCustomCategory(String[] exts) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: setCustomCategory");
         mCategory = FileCategory.Custom;
         if (filters.containsKey(FileCategory.Custom)) {
             filters.remove(FileCategory.Custom);
@@ -111,7 +111,7 @@ public class FileCategoryHelper {
         filters.put(FileCategory.Custom, new FilenameExtFilter(exts));
     }
 
-    public FilenameFilter getFilter() {
+    public FilenameFilter getFilter() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: getFilter");
         return filters.get(mCategory);
     }
 
@@ -121,7 +121,7 @@ public class FileCategoryHelper {
         return mCategoryInfo;
     }
 
-    public CategoryInfo getCategoryInfo(FileCategory fc) {
+    public CategoryInfo getCategoryInfo(FileCategory fc) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: getCategoryInfo");
         if (mCategoryInfo.containsKey(fc)) {
             return mCategoryInfo.get(fc);
         } else {
@@ -137,7 +137,7 @@ public class FileCategoryHelper {
         public long size;
     }
 
-    private void setCategoryInfo(FileCategory fc, long count, long size) {
+    private void setCategoryInfo(FileCategory fc, long count, long size) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: setCategoryInfo");
         CategoryInfo info = mCategoryInfo.get(fc);
         if (info == null) {
             info = new CategoryInfo();
@@ -148,7 +148,7 @@ public class FileCategoryHelper {
     }
 
 
-    private String buildDocSelection() {
+    private String buildDocSelection() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: buildDocSelection");
         StringBuilder selection = new StringBuilder();
         Iterator<String> iter = Util.sDocMimeTypesSet.iterator();
         while(iter.hasNext()) {
@@ -157,7 +157,7 @@ public class FileCategoryHelper {
         return  selection.substring(0, selection.lastIndexOf(")") + 1);
     }
 
-    private String buildSelectionByCategory(FileCategory cat) {
+    private String buildSelectionByCategory(FileCategory cat) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: buildSelectionByCategory");
         String selection = null;
         switch (cat) {
             case Theme:
@@ -178,7 +178,7 @@ public class FileCategoryHelper {
         return selection;
     }
 
-    private Uri getContentUriByCategory(FileCategory cat) {
+    private Uri getContentUriByCategory(FileCategory cat) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: getContentUriByCategory");
         Uri uri;
         String volumeName = "external";
         switch(cat) {
@@ -203,7 +203,7 @@ public class FileCategoryHelper {
         return uri;
     }
 
-    private String buildSortOrder(SortMethod sort) {
+    private String buildSortOrder(SortMethod sort) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: buildSortOrder");
         String sortOrder = null;
         switch (sort) {
             case name:
@@ -222,7 +222,7 @@ public class FileCategoryHelper {
         return sortOrder;
     }
 
-    public Cursor query(FileCategory fc, SortMethod sort) {
+    public Cursor query(FileCategory fc, SortMethod sort) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: query");
         Uri uri = getContentUriByCategory(fc);
         String selection = buildSelectionByCategory(fc);
         String sortOrder = buildSortOrder(sort);
@@ -239,7 +239,7 @@ public class FileCategoryHelper {
         return mContext.getContentResolver().query(uri, columns, selection, null, sortOrder);
     }
 
-    public void refreshCategoryInfo() {
+    public void refreshCategoryInfo() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: refreshCategoryInfo");
         // clear
         for (FileCategory fc : sCategories) {
             setCategoryInfo(fc, 0, 0);
@@ -264,7 +264,7 @@ public class FileCategoryHelper {
         refreshMediaCategory(FileCategory.Apk, uri);
     }
 
-    private boolean refreshMediaCategory(FileCategory fc, Uri uri) {
+    private boolean refreshMediaCategory(FileCategory fc, Uri uri) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: refreshMediaCategory");
         String[] columns = new String[] {
                 "COUNT(*)", "SUM(_size)"
         };
@@ -284,7 +284,7 @@ public class FileCategoryHelper {
         return false;
     }
 
-    public static FileCategory getCategoryFromPath(String path) {
+    public static FileCategory getCategoryFromPath(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: getCategoryFromPath");
         MediaFileType type = MediaFile.getFileType(path);
         if (type != null) {
             if (MediaFile.isAudioFileType(type.fileType)) return FileCategory.Music;
@@ -313,7 +313,7 @@ public class FileCategoryHelper {
         return FileCategory.Other;
     }
 
-    private static boolean matchExts(String ext, String[] exts) {
+    private static boolean matchExts(String ext, String[] exts) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryHelper.java: matchExts");
         for (String ex : exts) {
             if (ex.equalsIgnoreCase(ext))
                 return true;

@@ -360,7 +360,7 @@ public final class MimeUtils {
         applyOverrides();
     }
 
-    private static void add(String mimeType, String extension) {
+    private static void add(String mimeType, String extension) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: add");
         //
         // if we have an existing x --> y mapping, we do not want to
         // override it with another mapping x --> ?
@@ -375,7 +375,7 @@ public final class MimeUtils {
         extensionToMimeTypeMap.put(extension, mimeType);
     }
 
-    private static InputStream getContentTypesPropertiesStream() {
+    private static InputStream getContentTypesPropertiesStream() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: getContentTypesPropertiesStream");
         // User override?
         String userTable = System.getProperty("content.types.user.table");
         if (userTable != null) {
@@ -405,7 +405,7 @@ public final class MimeUtils {
      * own "content.types.user.table" means you don't get any of the built-ins, and the built-ins
      * come from "$JAVA_HOME/lib/content-types.properties".
      */
-    private static void applyOverrides() {
+    private static void applyOverrides() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: applyOverrides");
         // Get the appropriate InputStream to read overrides from, if any.
         InputStream stream = getContentTypesPropertiesStream();
         if (stream == null) {
@@ -438,7 +438,7 @@ public final class MimeUtils {
      * @param mimeType A MIME type (i.e. text/plain)
      * @return True iff there is a mimeType entry in the map.
      */
-    public static boolean hasMimeType(String mimeType) {
+    public static boolean hasMimeType(String mimeType) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: hasMimeType");
         if (mimeType == null || mimeType.isEmpty()) {
             return false;
         }
@@ -450,7 +450,7 @@ public final class MimeUtils {
      * @param extension A file extension without the leading '.'
      * @return The MIME type for the given extension or null iff there is none.
      */
-    public static String guessMimeTypeFromExtension(String extension) {
+    public static String guessMimeTypeFromExtension(String extension) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: guessMimeTypeFromExtension");
         if (extension == null || extension.isEmpty()) {
             return null;
         }
@@ -462,7 +462,7 @@ public final class MimeUtils {
      * @param extension A file extension without the leading '.'
      * @return True iff there is an extension entry in the map.
      */
-    public static boolean hasExtension(String extension) {
+    public static boolean hasExtension(String extension) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: hasExtension");
         if (extension == null || extension.isEmpty()) {
             return false;
         }
@@ -476,7 +476,7 @@ public final class MimeUtils {
      * @param mimeType A MIME type (i.e. text/plain)
      * @return The extension for the given MIME type or null iff there is none.
      */
-    public static String guessExtensionFromMimeType(String mimeType) {
+    public static String guessExtensionFromMimeType(String mimeType) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/MimeUtils.java: guessExtensionFromMimeType");
         if (mimeType == null || mimeType.isEmpty()) {
             return null;
         }

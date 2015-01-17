@@ -55,7 +55,7 @@ public class CategoryBar extends View {
 
     private long mFullValue;
 
-    public void setFullValue(long value) {
+    public void setFullValue(long value) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: setFullValue");
         mFullValue = value;
     }
 
@@ -71,13 +71,13 @@ public class CategoryBar extends View {
         super(context, attrs, defStyle);
     }
 
-    public void addCategory(int categoryImg) {
+    public void addCategory(int categoryImg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: addCategory");
         Category ca = new Category();
         ca.resImg = categoryImg;
         categories.add(ca);
     }
 
-    public boolean setCategoryValue(int index, long value) {
+    public boolean setCategoryValue(int index, long value) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: setCategoryValue");
         if (index < 0 || index >= categories.size())
             return false;
         categories.get(index).value = value;
@@ -145,11 +145,11 @@ public class CategoryBar extends View {
         d.draw(canvas);
     }
 
-    private Drawable getDrawable(int id) {
+    private Drawable getDrawable(int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: getDrawable");
         return getContext().getResources().getDrawable(id);
     }
 
-    private void stepAnimation() {
+    private void stepAnimation() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: stepAnimation");
         if (timer == null)
             return;
 
@@ -172,7 +172,7 @@ public class CategoryBar extends View {
         postInvalidate();
     }
 
-    synchronized public void startAnimation() {
+    synchronized public void startAnimation() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: startAnimation");
         if (timer != null) {
             return;
         }
@@ -187,7 +187,7 @@ public class CategoryBar extends View {
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
 
-            public void run() {
+            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/CategoryBar.java: run");
                 stepAnimation();
             }
 

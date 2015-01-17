@@ -50,12 +50,12 @@ public class Util {
 
     private static final String LOG_TAG = "Util";
 
-    public static boolean isSDCardReady() {
+    public static boolean isSDCardReady() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: isSDCardReady");
         return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
     }
 
     // if path1 contains path2
-    public static boolean containsPath(String path1, String path2) {
+    public static boolean containsPath(String path1, String path2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: containsPath");
         String path = path2;
         while (path != null) {
             if (path.equalsIgnoreCase(path1))
@@ -69,22 +69,22 @@ public class Util {
         return false;
     }
 
-    public static String makePath(String path1, String path2) {
+    public static String makePath(String path1, String path2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: makePath");
         if (path1.endsWith(File.separator))
             return path1 + path2;
 
         return path1 + File.separator + path2;
     }
 
-    public static String getSdDirectory() {
+    public static String getSdDirectory() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getSdDirectory");
         return Environment.getExternalStorageDirectory().getPath();
     }
 
-    public static boolean isNormalFile(String fullName) {
+    public static boolean isNormalFile(String fullName) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: isNormalFile");
         return !fullName.equals(ANDROID_SECURE);
     }
 
-    public static FileInfo GetFileInfo(String filePath) {
+    public static FileInfo GetFileInfo(String filePath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: GetFileInfo");
         File lFile = new File(filePath);
         if (!lFile.exists())
             return null;
@@ -101,7 +101,7 @@ public class Util {
         return lFileInfo;
     }
 
-    public static FileInfo GetFileInfo(File f, FilenameFilter filter, boolean showHidden) {
+    public static FileInfo GetFileInfo(File f, FilenameFilter filter, boolean showHidden) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: GetFileInfo");
         FileInfo lFileInfo = new FileInfo();
         String filePath = f.getPath();
         File lFile = new File(filePath);
@@ -142,7 +142,7 @@ public class Util {
      * appInfo.publicSourceDir = apkPath;来修正这个问题，详情参见:
      * http://code.google.com/p/android/issues/detail?id=9151
      */
-    public static Drawable getApkIcon(Context context, String apkPath) {
+    public static Drawable getApkIcon(Context context, String apkPath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getApkIcon");
         PackageManager pm = context.getPackageManager();
         PackageInfo info = pm.getPackageArchiveInfo(apkPath,
                 PackageManager.GET_ACTIVITIES);
@@ -159,7 +159,7 @@ public class Util {
         return null;
     }
 
-    public static String getExtFromFilename(String filename) {
+    public static String getExtFromFilename(String filename) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getExtFromFilename");
         int dotPosition = filename.lastIndexOf('.');
         if (dotPosition != -1) {
             return filename.substring(dotPosition + 1, filename.length());
@@ -167,7 +167,7 @@ public class Util {
         return "";
     }
 
-    public static String getNameFromFilename(String filename) {
+    public static String getNameFromFilename(String filename) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getNameFromFilename");
         int dotPosition = filename.lastIndexOf('.');
         if (dotPosition != -1) {
             return filename.substring(0, dotPosition);
@@ -175,7 +175,7 @@ public class Util {
         return "";
     }
 
-    public static String getPathFromFilepath(String filepath) {
+    public static String getPathFromFilepath(String filepath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getPathFromFilepath");
         int pos = filepath.lastIndexOf('/');
         if (pos != -1) {
             return filepath.substring(0, pos);
@@ -183,7 +183,7 @@ public class Util {
         return "";
     }
 
-    public static String getNameFromFilepath(String filepath) {
+    public static String getNameFromFilepath(String filepath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getNameFromFilepath");
         int pos = filepath.lastIndexOf('/');
         if (pos != -1) {
             return filepath.substring(pos + 1);
@@ -192,7 +192,7 @@ public class Util {
     }
 
     // return new file path if successful, or return null
-    public static String copyFile(String src, String dest) {
+    public static String copyFile(String src, String dest) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: copyFile");
         File file = new File(src);
         if (!file.exists() || file.isDirectory()) {
             Log.v(LOG_TAG, "copyFile: file not exist or is directory, " + src);
@@ -256,11 +256,11 @@ public class Util {
         "miren_browser/imagecaches"
     };
 
-    public static boolean shouldShowFile(String path) {
+    public static boolean shouldShowFile(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: shouldShowFile");
         return shouldShowFile(new File(path));
     }
 
-    public static boolean shouldShowFile(File file) {
+    public static boolean shouldShowFile(File file) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: shouldShowFile");
         boolean show = Settings.instance().getShowDotAndHiddenFiles();
         if (show)
             return true;
@@ -290,7 +290,7 @@ public class Util {
         return list;
     }
 
-    public static boolean setText(View view, int id, String text) {
+    public static boolean setText(View view, int id, String text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: setText");
         TextView textView = (TextView) view.findViewById(id);
         if (textView == null)
             return false;
@@ -299,7 +299,7 @@ public class Util {
         return true;
     }
 
-    public static boolean setText(View view, int id, int text) {
+    public static boolean setText(View view, int id, int text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: setText");
         TextView textView = (TextView) view.findViewById(id);
         if (textView == null)
             return false;
@@ -309,12 +309,12 @@ public class Util {
     }
 
     // comma separated number
-    public static String convertNumber(long number) {
+    public static String convertNumber(long number) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: convertNumber");
         return String.format("%,d", number);
     }
 
     // storage, G M K B
-    public static String convertStorage(long size) {
+    public static String convertStorage(long size) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: convertStorage");
         long kb = 1024;
         long mb = kb * 1024;
         long gb = mb * 1024;
@@ -337,7 +337,7 @@ public class Util {
         public long free;
     }
 
-    public static SDCardInfo getSDCardInfo() {
+    public static SDCardInfo getSDCardInfo() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: getSDCardInfo");
         String sDcString = android.os.Environment.getExternalStorageState();
 
         if (sDcString.equals(android.os.Environment.MEDIA_MOUNTED)) {
@@ -374,7 +374,7 @@ public class Util {
         return null;
     }
 
-    public static void showNotification(Context context, Intent intent, String title, String body, int drawableId) {
+    public static void showNotification(Context context, Intent intent, String title, String body, int drawableId) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: showNotification");
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Notification notification = new Notification(drawableId, body, System.currentTimeMillis());
         notification.flags = Notification.FLAG_AUTO_CANCEL;
@@ -388,7 +388,7 @@ public class Util {
         manager.notify(drawableId, notification);
     }
 
-    public static String formatDateString(Context context, long time) {
+    public static String formatDateString(Context context, long time) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: formatDateString");
         DateFormat dateFormat = android.text.format.DateFormat
                 .getDateFormat(context);
         DateFormat timeFormat = android.text.format.DateFormat
@@ -397,7 +397,7 @@ public class Util {
         return dateFormat.format(date) + " " + timeFormat.format(date);
     }
 
-    public static void updateActionModeTitle(ActionMode mode, Context context, int selectedNum) {
+    public static void updateActionModeTitle(ActionMode mode, Context context, int selectedNum) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/Util.java: updateActionModeTitle");
         if (mode != null) {
             mode.setTitle(context.getString(R.string.multi_select_title,selectedNum));
             if(selectedNum == 0){

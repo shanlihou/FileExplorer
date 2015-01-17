@@ -83,14 +83,14 @@ public class FileViewActivity extends Fragment implements
     private String mPreviousPath;
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
-        public void onReceive(Context context, Intent intent) {
+        public void onReceive(Context context, Intent intent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onReceive");
 
             String action = intent.getAction();
             Log.v(LOG_TAG, "received broadcast:" + intent.toString());
             if (action.equals(Intent.ACTION_MEDIA_MOUNTED) || action.equals(Intent.ACTION_MEDIA_UNMOUNTED)) {
                 runOnUiThread(new Runnable() {
                     @Override
-                    public void run() {
+                    public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: run");
                         updateUI();
                     }
                 });
@@ -101,7 +101,7 @@ public class FileViewActivity extends Fragment implements
     private boolean mBackspaceExit;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onCreateView");
         mActivity = getActivity();
         // getWindow().setFormat(android.graphics.PixelFormat.RGBA_8888);
         mRootView = inflater.inflate(R.layout.file_explorer_list, container, false);
@@ -126,7 +126,7 @@ public class FileViewActivity extends Fragment implements
                 mRootView.findViewById(R.id.pick_operation_bar).setVisibility(View.VISIBLE);
 
                 mRootView.findViewById(R.id.button_pick_confirm).setOnClickListener(new OnClickListener() {
-                    public void onClick(View v) {
+                    public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onClick");
                         try {
                             Intent intent = Intent.parseUri(mFileViewInteractionHub.getCurrentPath(), 0);
                             mActivity.setResult(Activity.RESULT_OK, intent);
@@ -138,7 +138,7 @@ public class FileViewActivity extends Fragment implements
                 });
 
                 mRootView.findViewById(R.id.button_pick_cancel).setOnClickListener(new OnClickListener() {
-                    public void onClick(View v) {
+                    public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onClick");
                         mActivity.finish();
                     }
                 });
@@ -196,25 +196,25 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onDestroyView");
         super.onDestroyView();
         mActivity.unregisterReceiver(mReceiver);
     }
 
     @Override
-    public void onPrepareOptionsMenu(Menu menu) {
+    public void onPrepareOptionsMenu(Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onPrepareOptionsMenu");
         mFileViewInteractionHub.onPrepareOptionsMenu(menu);
         super.onPrepareOptionsMenu(menu);
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onCreateOptionsMenu");
         mFileViewInteractionHub.onCreateOptionsMenu(menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
-    public boolean onBack() {
+    public boolean onBack() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onBack");
         if (mBackspaceExit || !Util.isSDCardReady() || mFileViewInteractionHub == null) {
             return false;
         }
@@ -231,7 +231,7 @@ public class FileViewActivity extends Fragment implements
     }
 
     // execute before change, return the memorized scroll position
-    private int computeScrollPosition(String path) {
+    private int computeScrollPosition(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: computeScrollPosition");
         int pos = 0;
         if(mPreviousPath!=null) {
             if (path.startsWith(mPreviousPath)) {
@@ -270,7 +270,7 @@ public class FileViewActivity extends Fragment implements
         mPreviousPath = path;
         return pos;
     }
-    public boolean onRefreshFileList(String path, FileSortHelper sort) {
+    public boolean onRefreshFileList(String path, FileSortHelper sort) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onRefreshFileList");
         File file = new File(path);
         if (!file.exists() || !file.isDirectory()) {
             return false;
@@ -302,14 +302,14 @@ public class FileViewActivity extends Fragment implements
         showEmptyView(fileList.size() == 0);
         mFileListView.post(new Runnable() {
             @Override
-            public void run() {
+            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: run");
                 mFileListView.setSelection(pos);
             }
         });
         return true;
     }
 
-    private void updateUI() {
+    private void updateUI() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: updateUI");
         boolean sdCardReady = Util.isSDCardReady();
         View noSdView = mRootView.findViewById(R.id.sd_not_available_page);
         noSdView.setVisibility(sdCardReady ? View.GONE : View.VISIBLE);
@@ -323,28 +323,28 @@ public class FileViewActivity extends Fragment implements
         }
     }
 
-    private void showEmptyView(boolean show) {
+    private void showEmptyView(boolean show) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: showEmptyView");
         View emptyView = mRootView.findViewById(R.id.empty_view);
         if (emptyView != null)
             emptyView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     @Override
-    public View getViewById(int id) {
+    public View getViewById(int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getViewById");
         return mRootView.findViewById(id);
     }
 
     @Override
-    public Context getContext() {
+    public Context getContext() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getContext");
         return mActivity;
     }
 
     @Override
-    public void onDataChanged() {
+    public void onDataChanged() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onDataChanged");
         runOnUiThread(new Runnable() {
 
             @Override
-            public void run() {
+            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: run");
                 mAdapter.notifyDataSetChanged();
             }
 
@@ -352,7 +352,7 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public void onPick(FileInfo f) {
+    public void onPick(FileInfo f) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onPick");
         try {
             Intent intent = Intent.parseUri(Uri.fromFile(new File(f.filePath)).toString(), 0);
             mActivity.setResult(Activity.RESULT_OK, intent);
@@ -364,18 +364,18 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public boolean shouldShowOperationPane() {
+    public boolean shouldShowOperationPane() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: shouldShowOperationPane");
         return true;
     }
 
     @Override
-    public boolean onOperation(int id) {
+    public boolean onOperation(int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onOperation");
         return false;
     }
 
     //支持显示真实路径
     @Override
-    public String getDisplayPath(String path) {
+    public String getDisplayPath(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getDisplayPath");
         if (path.startsWith(this.sdDir) && !FileExplorerPreferenceActivity.showRealPath(mActivity)) {
             return getString(R.string.sd_folder) + path.substring(this.sdDir.length());
         } else {
@@ -384,7 +384,7 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public String getRealPath(String displayPath) {
+    public String getRealPath(String displayPath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getRealPath");
         final String perfixName = getString(R.string.sd_folder);
         if (displayPath.startsWith(perfixName)) {
             return this.sdDir + displayPath.substring(perfixName.length());
@@ -394,26 +394,26 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public boolean onNavigation(String path) {
+    public boolean onNavigation(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: onNavigation");
         return false;
     }
 
     @Override
-    public boolean shouldHideMenu(int menu) {
+    public boolean shouldHideMenu(int menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: shouldHideMenu");
         return false;
     }
 
-    public void copyFile(ArrayList<FileInfo> files) {
+    public void copyFile(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: copyFile");
         mFileViewInteractionHub.onOperationCopy(files);
     }
 
-    public void refresh() {
+    public void refresh() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: refresh");
         if (mFileViewInteractionHub != null) {
             mFileViewInteractionHub.refreshFileList();
         }
     }
 
-    public void moveToFile(ArrayList<FileInfo> files) {
+    public void moveToFile(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: moveToFile");
         mFileViewInteractionHub.moveFileFrom(files);
     }
 
@@ -422,16 +422,16 @@ public class FileViewActivity extends Fragment implements
         void selected(ArrayList<FileInfo> files);
     }
 
-    public void startSelectFiles(SelectFilesCallback callback) {
+    public void startSelectFiles(SelectFilesCallback callback) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: startSelectFiles");
         mFileViewInteractionHub.startSelectFiles(callback);
     }
 
     @Override
-    public FileIconHelper getFileIconHelper() {
+    public FileIconHelper getFileIconHelper() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getFileIconHelper");
         return mFileIconHelper;
     }
 
-    public boolean setPath(String location) {
+    public boolean setPath(String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: setPath");
         if (!location.startsWith(mFileViewInteractionHub.getRootPath())) {
             return false;
         }
@@ -441,7 +441,7 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public FileInfo getItem(int pos) {
+    public FileInfo getItem(int pos) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getItem");
         if (pos < 0 || pos > mFileNameList.size() - 1)
             return null;
 
@@ -450,7 +450,7 @@ public class FileViewActivity extends Fragment implements
 
     @SuppressWarnings("unchecked")
     @Override
-    public void sortCurrentList(FileSortHelper sort) {
+    public void sortCurrentList(FileSortHelper sort) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: sortCurrentList");
         Collections.sort(mFileNameList, sort.getComparator());
         onDataChanged();
     }
@@ -461,18 +461,18 @@ public class FileViewActivity extends Fragment implements
     }
 
     @Override
-    public void addSingleFile(FileInfo file) {
+    public void addSingleFile(FileInfo file) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: addSingleFile");
         mFileNameList.add(file);
         onDataChanged();
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: getItemCount");
         return mFileNameList.size();
     }
 
     @Override
-    public void runOnUiThread(Runnable r) {
+    public void runOnUiThread(Runnable r) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewActivity.java: runOnUiThread");
         mActivity.runOnUiThread(r);
     }
 }

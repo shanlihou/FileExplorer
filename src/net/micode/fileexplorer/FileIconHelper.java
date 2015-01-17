@@ -83,7 +83,7 @@ public class FileIconHelper implements IconLoadFinishListener {
         mIconLoader = new FileIconLoader(context, this);
     }
 
-    private static void addItem(String[] exts, int resId) {
+    private static void addItem(String[] exts, int resId) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconHelper.java: addItem");
         if (exts != null) {
             for (String ext : exts) {
                 fileExtToIcons.put(ext.toLowerCase(), resId);
@@ -91,7 +91,7 @@ public class FileIconHelper implements IconLoadFinishListener {
         }
     }
 
-    public static int getFileIcon(String ext) {
+    public static int getFileIcon(String ext) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconHelper.java: getFileIcon");
         Integer i = fileExtToIcons.get(ext.toLowerCase());
         if (i != null) {
             return i.intValue();
@@ -101,7 +101,7 @@ public class FileIconHelper implements IconLoadFinishListener {
 
     }
 
-    public void setIcon(FileInfo fileInfo, ImageView fileImage, ImageView fileImageFrame) {
+    public void setIcon(FileInfo fileInfo, ImageView fileImage, ImageView fileImageFrame) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconHelper.java: setIcon");
         String filePath = fileInfo.filePath;
         long fileId = fileInfo.dbId;
         String extFromFilename = Util.getExtFromFilename(filePath);
@@ -138,7 +138,7 @@ public class FileIconHelper implements IconLoadFinishListener {
     }
 
     @Override
-    public void onIconLoadFinished(ImageView view) {
+    public void onIconLoadFinished(ImageView view) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconHelper.java: onIconLoadFinished");
         ImageView frame = imageFrames.get(view);
         if (frame != null) {
             frame.setVisibility(View.VISIBLE);

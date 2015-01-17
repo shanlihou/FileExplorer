@@ -62,7 +62,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
     protected MyLog myLog = new MyLog(this.getClass().getName());
 
     public Handler handler = new Handler() {
-        public void handleMessage(Message msg) {
+        public void handleMessage(Message msg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: handleMessage");
             switch (msg.what) {
                 case 0: // We are being told to do a UI update
                     // If more than one UI update is queued up, we only need to
@@ -90,7 +90,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onCreateView");
         mActivity = getActivity();
         mRootView = inflater.inflate(R.layout.server_control_activity, container, false);
 
@@ -116,7 +116,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
         // quickly turn on or off wifi.
         mRootView.findViewById(R.id.wifi_state_image).setOnClickListener(
                 new OnClickListener() {
-                    public void onClick(View v) {
+                    public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onClick");
                         Intent intent = new Intent(
                                 android.provider.Settings.ACTION_WIFI_SETTINGS);
                         startActivity(intent);
@@ -127,7 +127,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
     }
 
     @Override
-    public boolean onBack() {
+    public boolean onBack() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onBack");
         return false;
     }
 
@@ -135,13 +135,13 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
      * Whenever we regain focus, we should update the button text depending on
      * the state of the server service.
      */
-    public void onStart() {
+    public void onStart() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onStart");
         super.onStart();
         UiUpdater.registerClient(handler);
         updateUi();
     }
 
-    public void onResume() {
+    public void onResume() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onResume");
         super.onResume();
 
         UiUpdater.registerClient(handler);
@@ -158,19 +158,19 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
      * Whenever we lose focus, we must unregister from UI update messages from
      * the FTPServerService, because we may be deallocated.
      */
-    public void onPause() {
+    public void onPause() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onPause");
         super.onPause();
         UiUpdater.unregisterClient(handler);
         myLog.l(Log.DEBUG, "Unregistered for wifi updates");
         mActivity.unregisterReceiver(wifiReceiver);
     }
 
-    public void onStop() {
+    public void onStop() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onStop");
         super.onStop();
         UiUpdater.unregisterClient(handler);
     }
 
-    public void onDestroy() {
+    public void onDestroy() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onDestroy");
         super.onDestroy();
         UiUpdater.unregisterClient(handler);
     }
@@ -181,7 +181,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
      * any myLog.l() calls in this function, because that will trigger an
      * endless loop of UI updates.
      */
-    public void updateUi() {
+    public void updateUi() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: updateUi");
         myLog.l(Log.DEBUG, "Updating UI", true);
 
         WifiManager wifiMgr = (WifiManager) mActivity.getSystemService(Context.WIFI_SERVICE);
@@ -238,13 +238,13 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
         instructionTextPre.setVisibility(running ? View.GONE : View.VISIBLE);
     }
 
-    private void setText(int id, String text) {
+    private void setText(int id, String text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: setText");
         TextView tv = (TextView) mRootView.findViewById(id);
         tv.setText(text);
     }
 
     OnClickListener startStopListener = new OnClickListener() {
-        public void onClick(View v) {
+        public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onClick");
             Globals.setLastError(null);
             File chrootDir = new File(Defaults.chrootDir);
             if (!chrootDir.isDirectory())
@@ -265,7 +265,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
         }
     };
 
-    private void warnIfNoExternalStorage() {
+    private void warnIfNoExternalStorage() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: warnIfNoExternalStorage");
         String storageState = Environment.getExternalStorageState();
         if (!storageState.equals(Environment.MEDIA_MOUNTED)) {
             myLog.i("Warning due to storage state " + storageState);
@@ -276,7 +276,7 @@ public class ServerControlActivity extends Fragment implements IBackPressedListe
     }
 
     BroadcastReceiver wifiReceiver = new BroadcastReceiver() {
-        public void onReceive(Context ctx, Intent intent) {
+        public void onReceive(Context ctx, Intent intent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ServerControlActivity.java: onReceive");
             myLog.l(Log.DEBUG, "Wifi status broadcast received");
             updateUi();
         }

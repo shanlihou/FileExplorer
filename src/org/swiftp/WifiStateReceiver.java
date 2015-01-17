@@ -31,7 +31,7 @@ import android.util.Log;
 public class WifiStateReceiver extends BroadcastReceiver {
 
 	@Override
-	public void onReceive(Context context, Intent wifiIntent) {
+	public void onReceive(Context context, Intent wifiIntent) {Log.d("shanlihou", "../../mifile//src/org/swiftp/WifiStateReceiver.java: onReceive");
 		MyLog myLog = new MyLog(this.getClass().getName());
 		myLog.l(Log.DEBUG, "WifiStateReceiver running!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		SharedPreferences settings;

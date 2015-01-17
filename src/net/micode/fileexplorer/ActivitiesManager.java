@@ -40,15 +40,15 @@ public class ActivitiesManager {
     }
 
     // return true indicates successful, false indicates the name exists
-    public void registerActivity(String name, Activity a) {
+    public void registerActivity(String name, Activity a) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ActivitiesManager.java: registerActivity");
         activities.put(name, a);
     }
 
-    public Activity getActivity(String name) {
+    public Activity getActivity(String name) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ActivitiesManager.java: getActivity");
         return activities.get(name);
     }
 
-    public static ActivitiesManager getInstance() {
+    public static ActivitiesManager getInstance() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/ActivitiesManager.java: getInstance");
         if (instance == null)
             instance = new ActivitiesManager();
         return instance;

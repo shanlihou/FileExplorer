@@ -48,7 +48,7 @@ public class FileListAdapter extends ArrayAdapter<FileInfo> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListAdapter.java: getView");
         View view = null;
         if (convertView != null) {
             view = convertView;

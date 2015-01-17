@@ -36,7 +36,7 @@ import net.micode.fileexplorer.FileViewInteractionHub.Mode;
 public class FileListItem {
     public static void setupFileListItemInfo(Context context, View view,
             FileInfo fileInfo, FileIconHelper fileIcon,
-            FileViewInteractionHub fileViewInteractionHub) {
+            FileViewInteractionHub fileViewInteractionHub) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: setupFileListItemInfo");
 
         // if in moving mode, show selected file always
         if (fileViewInteractionHub.isMoveState()) {
@@ -81,7 +81,7 @@ public class FileListItem {
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: onClick");
             ImageView img = (ImageView) v.findViewById(R.id.file_checkbox);
             assert (img != null && img.getTag() != null);
 
@@ -112,13 +112,13 @@ public class FileListItem {
         private Context mContext;
         private FileViewInteractionHub mFileViewInteractionHub;
 
-        private void initMenuItemSelectAllOrCancel() {
+        private void initMenuItemSelectAllOrCancel() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: initMenuItemSelectAllOrCancel");
             boolean isSelectedAll = mFileViewInteractionHub.isSelectedAll();
             mMenu.findItem(R.id.action_cancel).setVisible(isSelectedAll);
             mMenu.findItem(R.id.action_select_all).setVisible(!isSelectedAll);
         }
 
-        private void scrollToSDcardTab() {
+        private void scrollToSDcardTab() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: scrollToSDcardTab");
             ActionBar bar = ((FileExplorerTabActivity) mContext).getActionBar();
             if (bar.getSelectedNavigationIndex() != Util.SDCARD_TAB_INDEX) {
                 bar.setSelectedNavigationItem(Util.SDCARD_TAB_INDEX);
@@ -132,7 +132,7 @@ public class FileListItem {
         }
 
         @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: onCreateActionMode");
             MenuInflater inflater = ((Activity) mContext).getMenuInflater();
             mMenu = menu;
             inflater.inflate(R.menu.operation_menu, mMenu);
@@ -141,7 +141,7 @@ public class FileListItem {
         }
 
         @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: onPrepareActionMode");
             mMenu.findItem(R.id.action_copy_path).setVisible(
                     mFileViewInteractionHub.getSelectedFileList().size() == 1);
             mMenu.findItem(R.id.action_cancel).setVisible(
@@ -152,7 +152,7 @@ public class FileListItem {
         }
 
         @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: onActionItemClicked");
             switch (item.getItemId()) {
                 case R.id.action_delete:
                     mFileViewInteractionHub.onOperationDelete();
@@ -196,7 +196,7 @@ public class FileListItem {
         }
 
         @Override
-        public void onDestroyActionMode(ActionMode mode) {
+        public void onDestroyActionMode(ActionMode mode) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListItem.java: onDestroyActionMode");
             mFileViewInteractionHub.clearSelection();
             ((FileExplorerTabActivity) mContext).setActionMode(null);
         }

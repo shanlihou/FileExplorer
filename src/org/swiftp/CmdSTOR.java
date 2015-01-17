@@ -29,7 +29,7 @@ public class CmdSTOR extends CmdAbstractStore implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {
+	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdSTOR.java: run");
 		doStorOrAppe(getParameter(input), false);
 	}
 }

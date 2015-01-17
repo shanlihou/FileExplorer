@@ -66,7 +66,7 @@ public class SessionThread extends Thread {
      * 
      * @return
      */
-    // public void setPortSocket(InetAddress dest, int port) {
+    // public void setPortSocket(InetAddress dest, int port) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setPortSocket");
     // myLog.l(Log.DEBUG, "Setting PORT dest to " +
     // dest.getHostAddress() + " port " + port);
     // outDataDest = dest;
@@ -78,7 +78,7 @@ public class SessionThread extends Thread {
      * @param string
      * @return Whether the send completed successfully
      */
-    public boolean sendViaDataSocket(String string) {
+    public boolean sendViaDataSocket(String string) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: sendViaDataSocket");
         try {
             byte[] bytes = string.getBytes(encoding);
             myLog.d("Using data connection encoding: " + encoding);
@@ -89,7 +89,7 @@ public class SessionThread extends Thread {
         }
     }
 
-    public boolean sendViaDataSocket(byte[] bytes, int len) {
+    public boolean sendViaDataSocket(byte[] bytes, int len) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: sendViaDataSocket");
         return sendViaDataSocket(bytes, 0, len);
     }
 
@@ -100,7 +100,7 @@ public class SessionThread extends Thread {
      * @param len
      * @return
      */
-    public boolean sendViaDataSocket(byte[] bytes, int start, int len) {
+    public boolean sendViaDataSocket(byte[] bytes, int start, int len) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: sendViaDataSocket");
 
         if (dataOutputStream == null) {
             myLog.l(Log.INFO, "Can't send via null dataOutputStream");
@@ -131,7 +131,7 @@ public class SessionThread extends Thread {
      *         bytes remain to be read, -2 if the data socket was not connected,
      *         0 if there was a read error
      */
-    public int receiveFromDataSocket(byte[] buf) {
+    public int receiveFromDataSocket(byte[] buf) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: receiveFromDataSocket");
         int bytesRead;
 
         if (dataSocket == null) {
@@ -167,7 +167,7 @@ public class SessionThread extends Thread {
      * 
      * @return Whether the necessary initialization was successful.
      */
-    public int onPasv() {
+    public int onPasv() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: onPasv");
         return dataSocketFactory.onPasv();
     }
 
@@ -176,11 +176,11 @@ public class SessionThread extends Thread {
      * 
      * @return Whether the necessary initialization was successful.
      */
-    public boolean onPort(InetAddress dest, int port) {
+    public boolean onPort(InetAddress dest, int port) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: onPort");
         return dataSocketFactory.onPort(dest, port);
     }
 
-    public InetAddress getDataSocketPasvIp() {
+    public InetAddress getDataSocketPasvIp() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getDataSocketPasvIp");
         // When the client sends PASV, our reply will contain the address and port
         // of the data connection that the client should connect to. For this purpose
         // we always use the same IP address that the command socket is using.
@@ -190,7 +190,7 @@ public class SessionThread extends Thread {
         //      return dataSocketFactory.getPasvIp();
     }
 
-    // public int getDataSocketPort() {
+    // public int getDataSocketPort() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getDataSocketPort");
     // return dataSocketFactory.getPortNumber();
     // }
 
@@ -200,7 +200,7 @@ public class SessionThread extends Thread {
      * 
      * @return
      */
-    public boolean startUsingDataSocket() {
+    public boolean startUsingDataSocket() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: startUsingDataSocket");
         try {
             dataSocket = dataSocketFactory.onTransfer();
             if (dataSocket == null) {
@@ -218,12 +218,12 @@ public class SessionThread extends Thread {
         }
     }
 
-    public void quit() {
+    public void quit() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: quit");
         myLog.d("SessionThread told to quit");
         closeSocket();
     }
 
-    public void closeDataSocket() {
+    public void closeDataSocket() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: closeDataSocket");
         myLog.l(Log.DEBUG, "Closing data socket");
         if (dataOutputStream != null) {
             try {
@@ -246,7 +246,7 @@ public class SessionThread extends Thread {
     }
 
     static int numNulls = 0;
-    public void run() {
+    public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: run");
         myLog.l(Log.INFO, "SessionThread started");
 
         if(sendWelcomeBanner) {
@@ -278,7 +278,7 @@ public class SessionThread extends Thread {
      * A static method to check the equality of two byte arrays, but only up to
      * a given length.
      */
-    public static boolean compareLen(byte[] array1, byte[] array2, int len) {
+    public static boolean compareLen(byte[] array1, byte[] array2, int len) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: compareLen");
         for (int i = 0; i < len; i++) {
             if (array1[i] != array2[i]) {
                 return false;
@@ -287,7 +287,7 @@ public class SessionThread extends Thread {
         return true;
     }
 
-    public void closeSocket() {
+    public void closeSocket() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: closeSocket");
         if (cmdSocket == null) {
             return;
         }
@@ -296,7 +296,7 @@ public class SessionThread extends Thread {
         } catch (IOException e) {}
     }
 
-    public void writeBytes(byte[] bytes) {
+    public void writeBytes(byte[] bytes) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: writeBytes");
         try {
             // TODO: do we really want to do all of this on each write? Why?
             BufferedOutputStream out = new BufferedOutputStream(cmdSocket
@@ -311,7 +311,7 @@ public class SessionThread extends Thread {
         }
     }
 
-    public void writeString(String str) {
+    public void writeString(String str) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: writeString");
         FTPServerService.writeMonitor(false, str);
         byte[] strBytes;
         try {
@@ -327,15 +327,15 @@ public class SessionThread extends Thread {
         return cmdSocket;
     }
 
-    public Account getAccount() {
+    public Account getAccount() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getAccount");
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount(Account account) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setAccount");
         this.account = account;
     }
 
-    public boolean isPasvMode() {
+    public boolean isPasvMode() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: isPasvMode");
         return pasvMode;
     }
 
@@ -351,23 +351,23 @@ public class SessionThread extends Thread {
         }
     }
 
-    static public ByteBuffer stringToBB(String s) {
+    static public ByteBuffer stringToBB(String s) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: stringToBB");
         return ByteBuffer.wrap(s.getBytes());
     }
 
-    public boolean isBinaryMode() {
+    public boolean isBinaryMode() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: isBinaryMode");
         return binaryMode;
     }
 
-    public void setBinaryMode(boolean binaryMode) {
+    public void setBinaryMode(boolean binaryMode) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setBinaryMode");
         this.binaryMode = binaryMode;
     }
 
-    public boolean isAuthenticated() {
+    public boolean isAuthenticated() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: isAuthenticated");
         return authenticated;
     }
 
-    public void authAttempt(boolean authenticated) {
+    public void authAttempt(boolean authenticated) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: authAttempt");
         if (authenticated) {
             myLog.l(Log.INFO, "Authentication complete");
             this.authenticated = true;
@@ -390,11 +390,11 @@ public class SessionThread extends Thread {
         
     }
 
-    public File getWorkingDir() {
+    public File getWorkingDir() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getWorkingDir");
         return workingDir;
     }
 
-    public void setWorkingDir(File workingDir) {
+    public void setWorkingDir(File workingDir) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setWorkingDir");
         try {
             this.workingDir = workingDir.getCanonicalFile().getAbsoluteFile();
         } catch (IOException e) {
@@ -403,37 +403,37 @@ public class SessionThread extends Thread {
     }
 
     /*
-     * public FTPServerService getService() {
+     * public FTPServerService getService() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getService");
      * 
-     * public void setService(FTPServerService service) {
+     * public void setService(FTPServerService service) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setService");
      * service; }
      */
 
-    public Socket getDataSocket() {
+    public Socket getDataSocket() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getDataSocket");
         return dataSocket;
     }
 
-    public void setDataSocket(Socket dataSocket) {
+    public void setDataSocket(Socket dataSocket) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setDataSocket");
         this.dataSocket = dataSocket;
     }
 
-    // public ServerSocket getServerSocket() {
+    // public ServerSocket getServerSocket() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getServerSocket");
     // return dataServerSocket;
     // }
 
-    public File getRenameFrom() {
+    public File getRenameFrom() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getRenameFrom");
         return renameFrom;
     }
 
-    public void setRenameFrom(File renameFrom) {
+    public void setRenameFrom(File renameFrom) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setRenameFrom");
         this.renameFrom = renameFrom;
     }
     
-    public String getEncoding() {
+    public String getEncoding() {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: getEncoding");
         return encoding;
     }
 
-    public void setEncoding(String encoding) {
+    public void setEncoding(String encoding) {Log.d("shanlihou", "../../mifile//src/org/swiftp/SessionThread.java: setEncoding");
         this.encoding = encoding;
     }
 

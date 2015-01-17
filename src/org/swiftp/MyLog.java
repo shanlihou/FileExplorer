@@ -30,7 +30,7 @@ public class MyLog {
 		this.tag = tag;
 	}
 	
-	public void l(int level, String str, boolean sysOnly) {
+	public void l(int level, String str, boolean sysOnly) {Log.d("shanlihou", "../../mifile//src/org/swiftp/MyLog.java: l");
 		synchronized (MyLog.class) {
 			str = str.trim();
 			// Messages of this severity are handled specially
@@ -48,20 +48,20 @@ public class MyLog {
 		}
 	}
 	
-	public void l(int level, String str) {
+	public void l(int level, String str) {Log.d("shanlihou", "../../mifile//src/org/swiftp/MyLog.java: l");
 		l(level, str, false);
 	}
 	
-	public void e(String s) {
+	public void e(String s) {Log.d("shanlihou", "../../mifile//src/org/swiftp/MyLog.java: e");
 		l(Log.ERROR, s, false);
 	}
-	public void w(String s) {
+	public void w(String s) {Log.d("shanlihou", "../../mifile//src/org/swiftp/MyLog.java: w");
 		l(Log.WARN, s, false);
 	}
-	public void i(String s) {
+	public void i(String s) {Log.d("shanlihou", "../../mifile//src/org/swiftp/MyLog.java: i");
 		l(Log.INFO, s, false);
 	}
-	public void d(String s) {
+	public void d(String s) {Log.d("shanlihou", "../../mifile//src/org/swiftp/MyLog.java: d");
 		l(Log.DEBUG, s, false);
 	}
 }

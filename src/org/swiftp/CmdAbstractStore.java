@@ -39,7 +39,7 @@ abstract public class CmdAbstractStore extends FtpCmd {
 		super(sessionThread, CmdAbstractStore.class.toString());
 	}
 	
-	public void doStorOrAppe(String param, boolean append) {
+	public void doStorOrAppe(String param, boolean append) {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdAbstractStore.java: doStorOrAppe");
 		myLog.l(Log.DEBUG, "STOR/APPE executing with append=" + append);
 		File storeFile = inputPathToChrootedFile(sessionThread.getWorkingDir(), param);
 		

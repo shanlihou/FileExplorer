@@ -75,7 +75,7 @@ public class FileExplorerTabActivity extends Activity {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(Configuration newConfig) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onConfigurationChanged");
         if (getActionBar().getSelectedNavigationIndex() == Util.CATEGORY_TAB_INDEX) {
             FileCategoryActivity categoryFragement =(FileCategoryActivity) mTabsAdapter.getItem(Util.CATEGORY_TAB_INDEX);
             if (categoryFragement.isHomePage()) {
@@ -87,14 +87,14 @@ public class FileExplorerTabActivity extends Activity {
         super.onConfigurationChanged(newConfig);
     }
 
-    public void reInstantiateCategoryTab() {
+    public void reInstantiateCategoryTab() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: reInstantiateCategoryTab");
         mTabsAdapter.destroyItem(mViewPager, Util.CATEGORY_TAB_INDEX,
                 mTabsAdapter.getItem(Util.CATEGORY_TAB_INDEX));
         mTabsAdapter.instantiateItem(mViewPager, Util.CATEGORY_TAB_INDEX);
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onBackPressed");
         IBackPressedListener backPressedListener = (IBackPressedListener) mTabsAdapter
                 .getItem(mViewPager.getCurrentItem());
         if (!backPressedListener.onBack()) {
@@ -110,15 +110,15 @@ public class FileExplorerTabActivity extends Activity {
         boolean onBack();
     }
 
-    public void setActionMode(ActionMode actionMode) {
+    public void setActionMode(ActionMode actionMode) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: setActionMode");
         mActionMode = actionMode;
     }
 
-    public ActionMode getActionMode() {
+    public ActionMode getActionMode() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: getActionMode");
         return mActionMode;
     }
 
-    public Fragment getFragment(int tabIndex) {
+    public Fragment getFragment(int tabIndex) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: getFragment");
         return mTabsAdapter.getItem(tabIndex);
     }
 
@@ -160,7 +160,7 @@ public class FileExplorerTabActivity extends Activity {
             mViewPager.setOnPageChangeListener(this);
         }
 
-        public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
+        public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: addTab");
             TabInfo info = new TabInfo(clss, args);
             tab.setTag(info);
             tab.setTabListener(this);
@@ -170,12 +170,12 @@ public class FileExplorerTabActivity extends Activity {
         }
 
         @Override
-        public int getCount() {
+        public int getCount() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: getCount");
             return mTabs.size();
         }
 
         @Override
-        public Fragment getItem(int position) {
+        public Fragment getItem(int position) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: getItem");
             TabInfo info = mTabs.get(position);
             if (info.fragment == null) {
                 info.fragment = Fragment.instantiate(mContext, info.clss.getName(), info.args);
@@ -184,20 +184,20 @@ public class FileExplorerTabActivity extends Activity {
         }
 
         @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onPageScrolled");
         }
 
         @Override
-        public void onPageSelected(int position) {
+        public void onPageSelected(int position) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onPageSelected");
             mActionBar.setSelectedNavigationItem(position);
         }
 
         @Override
-        public void onPageScrollStateChanged(int state) {
+        public void onPageScrollStateChanged(int state) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onPageScrollStateChanged");
         }
 
         @Override
-        public void onTabSelected(Tab tab, FragmentTransaction ft) {
+        public void onTabSelected(Tab tab, FragmentTransaction ft) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onTabSelected");
             Object tag = tab.getTag();
             for (int i=0; i<mTabs.size(); i++) {
                 if (mTabs.get(i) == tag) {
@@ -213,11 +213,11 @@ public class FileExplorerTabActivity extends Activity {
         }
 
         @Override
-        public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+        public void onTabUnselected(Tab tab, FragmentTransaction ft) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onTabUnselected");
         }
 
         @Override
-        public void onTabReselected(Tab tab, FragmentTransaction ft) {
+        public void onTabReselected(Tab tab, FragmentTransaction ft) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerTabActivity.java: onTabReselected");
         }
     }
 }

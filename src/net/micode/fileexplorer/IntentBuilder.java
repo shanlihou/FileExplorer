@@ -32,7 +32,7 @@ import android.text.TextUtils;
 
 public class IntentBuilder {
 
-    public static void viewFile(final Context context, final String filePath) {
+    public static void viewFile(final Context context, final String filePath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/IntentBuilder.java: viewFile");
         String type = getMimeType(filePath);
 
         if (!TextUtils.isEmpty(type) && !TextUtils.equals(type, "*/*")) {
@@ -55,7 +55,7 @@ public class IntentBuilder {
             dialogBuilder.setItems(menuItemArray,
                     new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                        public void onClick(DialogInterface dialog, int which) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/IntentBuilder.java: onClick");
                             String selectType = "*/*";
                             switch (which) {
                             case 0:
@@ -82,7 +82,7 @@ public class IntentBuilder {
         }
     }
 
-    public static Intent buildSendFile(ArrayList<FileInfo> files) {
+    public static Intent buildSendFile(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/IntentBuilder.java: buildSendFile");
         ArrayList<Uri> uris = new ArrayList<Uri>();
 
         String mimeType = "*/*";
@@ -114,7 +114,7 @@ public class IntentBuilder {
         return intent;
     }
 
-    private static String getMimeType(String filePath) {
+    private static String getMimeType(String filePath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/IntentBuilder.java: getMimeType");
         int dotPosition = filePath.lastIndexOf('.');
         if (dotPosition == -1)
             return "*/*";
