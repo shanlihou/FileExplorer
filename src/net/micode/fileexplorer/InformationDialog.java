@@ -78,7 +78,7 @@ public class InformationDialog extends AlertDialog {
 
     private Handler mHandler = new Handler() {
 
-        public void handleMessage(Message msg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/InformationDialog.java: handleMessage");
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case ID_USER:
                     Bundle data = msg.getData();
@@ -91,7 +91,7 @@ public class InformationDialog extends AlertDialog {
     private AsyncTask task;
 
     @SuppressWarnings("unchecked")
-    private void asyncGetSize() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/InformationDialog.java: asyncGetSize");
+    private void asyncGetSize() {
         task = new AsyncTask() {
             private long size;
 
@@ -104,7 +104,7 @@ public class InformationDialog extends AlertDialog {
                 return null;
             }
 
-            private void getSize(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/InformationDialog.java: getSize");
+            private void getSize(String path) {
                 if (isCancelled())
                     return;
                 File file = new File(path);
@@ -128,7 +128,7 @@ public class InformationDialog extends AlertDialog {
         }.execute(mFileInfo.filePath);
     }
 
-    private void onSize(final long size) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/InformationDialog.java: onSize");
+    private void onSize(final long size) {
         Message msg = new Message();
         msg.what = ID_USER;
         Bundle bd = new Bundle();
@@ -137,7 +137,7 @@ public class InformationDialog extends AlertDialog {
         mHandler.sendMessage(msg); // 向Handler发送消息,更新UI
     }
 
-    private String formatFileSizeString(long size) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/InformationDialog.java: formatFileSizeString");
+    private String formatFileSizeString(long size) {
         String ret = "";
         if (size >= 1024) {
             ret = Util.convertStorage(size);

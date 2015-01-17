@@ -28,7 +28,7 @@ public class CmdTemplate extends FtpCmd implements Runnable {
 		super(sessionThread, CmdTemplate.class.toString());
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdTemplate.java: run");
+	public void run() {
 		sessionThread.writeString(message);
 		myLog.l(Log.INFO, "Template log message");
 	}

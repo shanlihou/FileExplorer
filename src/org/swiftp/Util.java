@@ -46,7 +46,7 @@ abstract public class Util {
 	 * Get the SwiFTP version from the manifest.
 	 * @return The version as a String.
 	 */
-	public static String getVersion() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: getVersion");
+	public static String getVersion() {
 		String packageName = Globals.getContext().getPackageName();
 		try {
 			return Globals.getContext().getPackageManager().getPackageInfo(packageName, 0).versionName;
@@ -57,12 +57,12 @@ abstract public class Util {
 	}
 	
 	
-	public static byte byteOfInt(int value, int which) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: byteOfInt");
+	public static byte byteOfInt(int value, int which) {
 		int shift = which * 8;
 		return (byte)(value >> shift); 
 	}
 	
-	public static String ipToString(int addr, String sep) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: ipToString");
+	public static String ipToString(int addr, String sep) {
 		//myLog.l(Log.DEBUG, "IP as int: " + addr);
 		if(addr > 0) {
 			StringBuffer buf = new StringBuffer();
@@ -78,7 +78,7 @@ abstract public class Util {
 		}	
 	}
 	
-	public static InetAddress intToInet(int value) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: intToInet");
+	public static InetAddress intToInet(int value) {
 		byte[] bytes = new byte[4];
 		for(int i = 0; i<4; i++) {
 			bytes[i] = byteOfInt(value, i);
@@ -91,7 +91,7 @@ abstract public class Util {
 		}
 	}
 	
-	public static String ipToString(int addr) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: ipToString");
+	public static String ipToString(int addr) {
 		if(addr == 0) {
 			// This can only occur due to an error, we shouldn't blindly
 			// convert 0 to string.
@@ -122,14 +122,14 @@ abstract public class Util {
 		}
 	}
 	
-	public static void newFileNotify(String path) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: newFileNotify");
+	public static void newFileNotify(String path) {
 		if(Defaults.do_mediascanner_notify) {
 			myLog.l(Log.DEBUG, "Notifying others about new file: " + path);
 			new MediaScannerNotifier(Globals.getContext(), path);
 		}
 	}
 	
-	public static void deletedFileNotify(String path) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: deletedFileNotify");
+	public static void deletedFileNotify(String path) {
 		// This might not work, I couldn't find an API call for this.
 		if(Defaults.do_mediascanner_notify) {
 			myLog.l(Log.DEBUG, "Notifying others about deleted file: " + path);
@@ -150,11 +150,11 @@ abstract public class Util {
 	        connection.connect();
 	    }
 
-	    public void onMediaScannerConnected() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: onMediaScannerConnected");
+	    public void onMediaScannerConnected() {
 	        connection.scanFile(path, null); // null: we don't know MIME type
 	    }
 
-	    public void onScanCompleted(String path, Uri uri) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: onScanCompleted");
+	    public void onScanCompleted(String path, Uri uri) {
             connection.disconnect();
  	    }
 	}
@@ -166,7 +166,7 @@ abstract public class Util {
 		return retArr;		
 	}
 	
-	public static void sleepIgnoreInterupt(long millis) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Util.java: sleepIgnoreInterupt");
+	public static void sleepIgnoreInterupt(long millis) {
 		try {
 			Thread.sleep(millis);
 		} catch(InterruptedException e) {}

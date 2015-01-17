@@ -75,7 +75,7 @@ public class FileExplorerPreferenceActivity extends PreferenceActivity implement
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedpreferences, String key) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java: onSharedPreferenceChanged");
+    public void onSharedPreferenceChanged(SharedPreferences sharedpreferences, String key) {
         if (PRIMARY_FOLDER.equals(key)) {
             mEditTextPreference.setSummary(this.getString(
                     R.string.pref_primary_folder_summary,
@@ -83,7 +83,7 @@ public class FileExplorerPreferenceActivity extends PreferenceActivity implement
         }
     }
 
-    public static String getPrimaryFolder(Context context) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java: getPrimaryFolder");
+    public static String getPrimaryFolder(Context context) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         String primaryFolder = settings.getString(PRIMARY_FOLDER, context.getString(R.string.default_primary_folder, GlobalConsts.ROOT_PATH));
 
@@ -101,7 +101,7 @@ public class FileExplorerPreferenceActivity extends PreferenceActivity implement
         }
     }
 
-    public static boolean isReadRoot(Context context) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java: isReadRoot");
+    public static boolean isReadRoot(Context context) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 
         boolean isReadRootFromSetting = settings.getBoolean(READ_ROOT, false);
@@ -110,7 +110,7 @@ public class FileExplorerPreferenceActivity extends PreferenceActivity implement
         return isReadRootFromSetting || isReadRootWhenSettingPrimaryFolderWithoutSdCardPrefix;
     }
     
-    public static boolean showRealPath(Context context) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileExplorerPreferenceActivity.java: showRealPath");
+    public static boolean showRealPath(Context context) {
     	SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
     	return settings.getBoolean(SHOW_REAL_PATH, false);
     }

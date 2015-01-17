@@ -12,7 +12,7 @@ public class CmdSIZE extends FtpCmd {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdSIZE.java: run");
+	public void run() {
 		myLog.d("SIZE executing");
 		
 		String errString = null;

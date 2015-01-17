@@ -35,7 +35,7 @@ public class FilenameOtherExtFilter extends FilenameExtFilter {
     }
 
     @Override
-    public boolean contains(String ext) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FilenameOtherExtFilter.java: contains");
+    public boolean contains(String ext) {
         for (FilenameExtFilter f : mExts) {
             if (f.contains(ext))
                 return false;

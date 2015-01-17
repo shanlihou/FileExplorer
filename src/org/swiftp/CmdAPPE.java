@@ -29,7 +29,7 @@ public class CmdAPPE extends CmdAbstractStore implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdAPPE.java: run");
+	public void run() {
 		doStorOrAppe(getParameter(input), true);
 	}
 }

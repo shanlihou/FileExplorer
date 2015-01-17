@@ -36,7 +36,7 @@ public class TcpListener extends Thread {
 		this.ftpServerService = ftpServerService;
 	}
 	
-	public void quit() {Log.d("shanlihou", "../../mifile//src/org/swiftp/TcpListener.java: quit");
+	public void quit() {
 		try {
 			listenSocket.close(); // if the TcpListener thread is blocked on accept,
 			                      // closing the socket will raise an exception
@@ -45,7 +45,7 @@ public class TcpListener extends Thread {
 		}
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/TcpListener.java: run");
+	public void run() {
 		try {
 			while(true) {
 				

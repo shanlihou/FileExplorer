@@ -52,7 +52,7 @@ public class FileListCursorAdapter extends CursorAdapter {
     }
 
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListCursorAdapter.java: bindView");
+    public void bindView(View view, Context context, Cursor cursor) {
         FileInfo fileInfo = getFileItem(cursor.getPosition());
         if (fileInfo == null) {
             // file is not existing, create a fake info
@@ -70,12 +70,12 @@ public class FileListCursorAdapter extends CursorAdapter {
     }
 
     @Override
-    public View newView(Context context, Cursor cursor, ViewGroup parent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListCursorAdapter.java: newView");
+    public View newView(Context context, Cursor cursor, ViewGroup parent) {
         return mFactory.inflate(R.layout.category_file_browser_item, parent, false);
     }
 
     @Override
-    public void changeCursor(Cursor cursor) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListCursorAdapter.java: changeCursor");
+    public void changeCursor(Cursor cursor) {
         mFileNameList.clear();
         super.changeCursor(cursor);
     }
@@ -100,7 +100,7 @@ public class FileListCursorAdapter extends CursorAdapter {
         return mFileNameList.values();
     }
 
-    public FileInfo getFileItem(int pos) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListCursorAdapter.java: getFileItem");
+    public FileInfo getFileItem(int pos) {
         Integer position = Integer.valueOf(pos);
         if (mFileNameList.containsKey(position))
             return mFileNameList.get(position);
@@ -115,7 +115,7 @@ public class FileListCursorAdapter extends CursorAdapter {
         return fileInfo;
     }
 
-    private FileInfo getFileInfo(Cursor cursor) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileListCursorAdapter.java: getFileInfo");
+    private FileInfo getFileInfo(Cursor cursor) {
         return (cursor == null || cursor.getCount() == 0) ? null : Util
                 .GetFileInfo(cursor.getString(FileCategoryHelper.COLUMN_PATH));
     }

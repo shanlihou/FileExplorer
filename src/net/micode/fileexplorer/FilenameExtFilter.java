@@ -36,12 +36,12 @@ public class FilenameExtFilter implements FilenameFilter {
         }
     }
 
-    public boolean contains(String ext) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FilenameExtFilter.java: contains");
+    public boolean contains(String ext) {
         return mExts.contains(ext.toLowerCase());
     }
 
     @Override
-    public boolean accept(File dir, String filename) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FilenameExtFilter.java: accept");
+    public boolean accept(File dir, String filename) {
 
         File file = new File(dir + File.separator + filename);
         if (file.isDirectory()) {

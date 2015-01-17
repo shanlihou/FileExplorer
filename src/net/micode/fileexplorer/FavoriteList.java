@@ -52,7 +52,7 @@ public class FavoriteList implements FavoriteDatabaseListener {
         return mFavoriteListAdapter;
     }
 
-    public void update() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: update");
+    public void update() {
         mFavoriteList.clear();
 
         Cursor c = mFavoriteDatabase.query();
@@ -81,7 +81,7 @@ public class FavoriteList implements FavoriteDatabaseListener {
         mFavoriteListAdapter.notifyDataSetChanged();
     }
 
-    public void initList() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: initList");
+    public void initList() {
         mFavoriteList.clear();
         Cursor c = mFavoriteDatabase.query();
         if (c != null)
@@ -96,28 +96,28 @@ public class FavoriteList implements FavoriteDatabaseListener {
         update();
     }
 
-    public long getCount() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: getCount");
+    public long getCount() {
         return mFavoriteList.size();
     }
 
-    public void show(boolean show) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: show");
+    public void show(boolean show) {
         mListView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
-    private void setupFavoriteListView(ListView list) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: setupFavoriteListView");
+    private void setupFavoriteListView(ListView list) {
         mListView = list;
         mListView.setAdapter(mFavoriteListAdapter);
         mListView.setLongClickable(true);
         mListView.setOnCreateContextMenuListener(mListViewContextMenuListener);
         mListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: onItemClick");
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 onFavoriteListItemClick(parent, view, position, id);
             }
         });
     }
 
-    public void onFavoriteListItemClick(AdapterView<?> parent, View view, int position, long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: onFavoriteListItemClick");
+    public void onFavoriteListItemClick(AdapterView<?> parent, View view, int position, long id) {
         FavoriteItem favorite = mFavoriteList.get(position);
 
         if (favorite.fileInfo.IsDir) {
@@ -139,7 +139,7 @@ public class FavoriteList implements FavoriteDatabaseListener {
     // context menu
     private OnCreateContextMenuListener mListViewContextMenuListener = new OnCreateContextMenuListener() {
         @Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: onCreateContextMenu");
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
             menu.add(0, MENU_UNFAVORITE, 0, R.string.operation_unfavorite)
                     .setOnMenuItemClickListener(menuItemClick);
         }
@@ -148,7 +148,7 @@ public class FavoriteList implements FavoriteDatabaseListener {
     private OnMenuItemClickListener menuItemClick = new OnMenuItemClickListener() {
 
         @Override
-        public boolean onMenuItemClick(MenuItem item) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: onMenuItemClick");
+        public boolean onMenuItemClick(MenuItem item) {
             int itemId = item.getItemId();
             AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
             int position = info != null ? info.position : -1;
@@ -168,7 +168,7 @@ public class FavoriteList implements FavoriteDatabaseListener {
         }
     };
 
-    private void deleteFavorite(int position) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: deleteFavorite");
+    private void deleteFavorite(int position) {
         FavoriteItem favorite = mFavoriteList.get(position);
         mFavoriteDatabase.delete(favorite.id, false);
         mFavoriteList.remove(position);
@@ -177,7 +177,7 @@ public class FavoriteList implements FavoriteDatabaseListener {
     }
 
     @Override
-    public void onFavoriteDatabaseChanged() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteList.java: onFavoriteDatabaseChanged");
+    public void onFavoriteDatabaseChanged() {
         update();
         mListener.onFavoriteDatabaseChanged();
     }

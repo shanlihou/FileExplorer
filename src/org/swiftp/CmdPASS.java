@@ -34,7 +34,7 @@ public class CmdPASS extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdPASS.java: run");
+	public void run() {
 		// User must have already executed a USER command to
 		// populate the Account object's username
 		myLog.l(Log.DEBUG, "Executing PASS");

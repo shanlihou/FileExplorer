@@ -44,7 +44,7 @@ public class FavoriteListAdapter extends ArrayAdapter<FavoriteItem> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FavoriteListAdapter.java: getView");
+    public View getView(int position, View convertView, ViewGroup parent) {
         View view = null;
         if (convertView != null) {
             view = convertView;

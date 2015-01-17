@@ -32,7 +32,7 @@ public class CmdRMD extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdRMD.java: run");
+	public void run() {
 		myLog.l(Log.INFO, "RMD executing");
 		String param = getParameter(input);
 		File toRemove;

@@ -35,7 +35,7 @@ public class CmdRETR extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdRETR.java: run");
+	public void run() {
 		myLog.l(Log.DEBUG, "RETR executing");
 		String param = getParameter(input);
 		File fileToRetr;

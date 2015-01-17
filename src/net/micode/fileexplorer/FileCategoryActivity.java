@@ -70,7 +70,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
 
     private boolean mConfigurationChanged = false;
 
-    public void setConfigurationChanged(boolean changed) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setConfigurationChanged");
+    public void setConfigurationChanged(boolean changed) {
         mConfigurationChanged = changed;
     }
 
@@ -86,7 +86,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onCreateView");
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = getActivity();
         mFileViewActivity = (FileViewActivity) ((FileExplorerTabActivity) mActivity)
                 .getFragment(Util.SDCARD_TAB_INDEX);
@@ -111,7 +111,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         return mRootView;
     }
 
-    private void registerScannerReceiver() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: registerScannerReceiver");
+    private void registerScannerReceiver() {
         mScannerReceiver = new ScannerReceiver();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_MEDIA_SCANNER_FINISHED);
@@ -121,7 +121,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         mActivity.registerReceiver(mScannerReceiver, intentFilter);
     }
 
-    private void setupCategoryInfo() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setupCategoryInfo");
+    private void setupCategoryInfo() {
         mFileCagetoryHelper = new FileCategoryHelper(mActivity);
 
         mCategoryBar = (CategoryBar) mRootView.findViewById(R.id.category_bar);
@@ -141,7 +141,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         }
     }
 
-    public void refreshCategoryInfo() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: refreshCategoryInfo");
+    public void refreshCategoryInfo() {
         SDCardInfo sdCardInfo = Util.getSDCardInfo();
         if (sdCardInfo != null) {
             mCategoryBar.setFullValue(sdCardInfo.total);
@@ -183,7 +183,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         Home, Favorite, Category, NoSD, Invalid
     }
 
-    private void showPage(ViewPage p) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: showPage");
+    private void showPage(ViewPage p) {
         if (curViewPage == p) return;
 
         curViewPage = p;
@@ -220,13 +220,13 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         }
     }
 
-    private void showEmptyView(boolean show) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: showEmptyView");
+    private void showEmptyView(boolean show) {
         View emptyView = mActivity.findViewById(R.id.empty_view);
         if (emptyView != null)
             emptyView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
-    private void showView(int id, boolean show) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: showView");
+    private void showView(int id, boolean show) {
         View view = mRootView.findViewById(id);
         if (view != null) {
             view.setVisibility(show ? View.VISIBLE : View.GONE);
@@ -235,7 +235,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onClick");
+        public void onClick(View v) {
             FileCategory f = button2Category.get(v.getId());
             if (f != null) {
                 onCategorySelected(f);
@@ -247,7 +247,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
 
     };
 
-    private void setCategoryCount(FileCategory fc, long count) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setCategoryCount");
+    private void setCategoryCount(FileCategory fc, long count) {
         int id = getCategoryCountId(fc);
         if (id == 0)
             return;
@@ -255,12 +255,12 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         setTextView(id, "(" + count + ")");
     }
 
-    private void setTextView(int id, String t) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setTextView");
+    private void setTextView(int id, String t) {
         TextView text = (TextView) mRootView.findViewById(id);
         text.setText(t);
     }
 
-    private void onCategorySelected(FileCategory f) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onCategorySelected");
+    private void onCategorySelected(FileCategory f) {
         if (mFileCagetoryHelper.getCurCategory() != f) {
             mFileCagetoryHelper.setCurCategory(f);
             mFileViewInteractionHub.setCurrentPath(mFileViewInteractionHub.getRootPath()
@@ -275,12 +275,12 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         }
     }
 
-    private void setupClick(int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setupClick");
+    private void setupClick(int id) {
         View button = mRootView.findViewById(id);
         button.setOnClickListener(onClickListener);
     }
 
-    private void setupClick() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setupClick");
+    private void setupClick() {
         setupClick(R.id.category_music);
         setupClick(R.id.category_video);
         setupClick(R.id.category_picture);
@@ -292,7 +292,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public boolean onBack() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onBack");
+    public boolean onBack() {
         if (isHomePage() || curViewPage == ViewPage.NoSD || mFileViewInteractionHub == null) {
             return false;
         }
@@ -300,12 +300,12 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         return mFileViewInteractionHub.onBackPressed();
     }
 
-    public boolean isHomePage() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: isHomePage");
+    public boolean isHomePage() {
         return curViewPage == ViewPage.Home;
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onCreateOptionsMenu");
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         if (curViewPage != ViewPage.Category && curViewPage != ViewPage.Favorite) {
             return;
         }
@@ -313,13 +313,13 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public void onPrepareOptionsMenu(Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onPrepareOptionsMenu");
+    public void onPrepareOptionsMenu(Menu menu) {
         if (!isHomePage() && mFileCagetoryHelper.getCurCategory() != FileCategory.Favorite) {
             mFileViewInteractionHub.onPrepareOptionsMenu(menu);
         }
     }
 
-    public boolean onRefreshFileList(String path, FileSortHelper sort) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onRefreshFileList");
+    public boolean onRefreshFileList(String path, FileSortHelper sort) {
         FileCategory curCategory = mFileCagetoryHelper.getCurCategory();
         if (curCategory == FileCategory.Favorite || curCategory == FileCategory.All)
             return false;
@@ -332,21 +332,21 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public View getViewById(int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getViewById");
+    public View getViewById(int id) {
         return mRootView.findViewById(id);
     }
 
     @Override
-    public Context getContext() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getContext");
+    public Context getContext() {
         return mActivity;
     }
 
     @Override
-    public void onDataChanged() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onDataChanged");
+    public void onDataChanged() {
         runOnUiThread(new Runnable() {
 
             @Override
-            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: run");
+            public void run() {
                 mAdapter.notifyDataSetChanged();
                 mFavoriteList.getArrayAdapter().notifyDataSetChanged();
                 showEmptyView(mAdapter.getCount() == 0);
@@ -356,17 +356,17 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public void onPick(FileInfo f) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onPick");
+    public void onPick(FileInfo f) {
         // do nothing
     }
 
     @Override
-    public boolean shouldShowOperationPane() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: shouldShowOperationPane");
+    public boolean shouldShowOperationPane() {
         return true;
     }
 
     @Override
-    public boolean onOperation(int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onOperation");
+    public boolean onOperation(int id) {
         mFileViewInteractionHub.addContextMenuSelectedItem();
         switch (id) {
             case R.id.button_operation_copy:
@@ -390,29 +390,29 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public String getDisplayPath(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getDisplayPath");
+    public String getDisplayPath(String path) {
         return getString(R.string.tab_category) + path;
     }
 
     @Override
-    public String getRealPath(String displayPath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getRealPath");
+    public String getRealPath(String displayPath) {
         return "";
     }
 
     @Override
-    public boolean onNavigation(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onNavigation");
+    public boolean onNavigation(String path) {
         showPage(ViewPage.Home);
         return true;
     }
 
     @Override
-    public boolean shouldHideMenu(int menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: shouldHideMenu");
+    public boolean shouldHideMenu(int menu) {
         return (menu == GlobalConsts.MENU_NEW_FOLDER || menu == GlobalConsts.MENU_FAVORITE
                 || menu == GlobalConsts.MENU_PASTE || menu == GlobalConsts.MENU_SHOWHIDE);
     }
 
     @Override
-    public void addSingleFile(FileInfo file) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: addSingleFile");
+    public void addSingleFile(FileInfo file) {
         refreshList();
     }
 
@@ -422,42 +422,42 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     }
 
     @Override
-    public FileInfo getItem(int pos) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getItem");
+    public FileInfo getItem(int pos) {
         return mAdapter.getFileItem(pos);
     }
 
     @Override
-    public int getItemCount() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getItemCount");
+    public int getItemCount() {
         return mAdapter.getCount();
     }
 
     @Override
-    public void sortCurrentList(FileSortHelper sort) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: sortCurrentList");
+    public void sortCurrentList(FileSortHelper sort) {
         refreshList();
     }
 
-    private void refreshList() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: refreshList");
+    private void refreshList() {
         mFileViewInteractionHub.refreshFileList();
     }
 
-    private void copyFileInFileView(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: copyFileInFileView");
+    private void copyFileInFileView(ArrayList<FileInfo> files) {
         if (files.size() == 0) return;
         mFileViewActivity.copyFile(files);
         mActivity.getActionBar().setSelectedNavigationItem(Util.SDCARD_TAB_INDEX);
     }
 
-    private void startMoveToFileView(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: startMoveToFileView");
+    private void startMoveToFileView(ArrayList<FileInfo> files) {
         if (files.size() == 0) return;
         mFileViewActivity.moveToFile(files);
         mActivity.getActionBar().setSelectedNavigationItem(Util.SDCARD_TAB_INDEX);
     }
 
     @Override
-    public FileIconHelper getFileIconHelper() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getFileIconHelper");
+    public FileIconHelper getFileIconHelper() {
         return mFileIconHelper;
     }
 
-    private static int getCategoryCountId(FileCategory fc) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: getCategoryCountId");
+    private static int getCategoryCountId(FileCategory fc) {
         switch (fc) {
             case Music:
                 return R.id.category_music_count;
@@ -480,7 +480,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         return 0;
     }
 
-    private void setCategorySize(FileCategory fc, long size) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setCategorySize");
+    private void setCategorySize(FileCategory fc, long size) {
         int txtId = 0;
         int resId = 0;
         switch (fc) {
@@ -524,14 +524,14 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         setTextView(txtId, getString(resId) + ":" + Util.convertStorage(size));
     }
 
-    private void setCategoryBarValue(FileCategory f, long size) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: setCategoryBarValue");
+    private void setCategoryBarValue(FileCategory f, long size) {
         if (mCategoryBar == null) {
             mCategoryBar = (CategoryBar) mRootView.findViewById(R.id.category_bar);
         }
         mCategoryBar.setCategoryValue(categoryIndex.get(f), size);
     }
 
-    public void onDestroy() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onDestroy");
+    public void onDestroy() {
         super.onDestroy();
         if (mActivity != null) {
             mActivity.unregisterReceiver(mScannerReceiver);
@@ -541,7 +541,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     private class ScannerReceiver extends BroadcastReceiver {
 
         @Override
-        public void onReceive(Context context, Intent intent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onReceive");
+        public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             Log.v(LOG_TAG, "received broadcast: " + action.toString());
             // handle intents related to external storage
@@ -552,7 +552,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
         }
     }
 
-    private void updateUI() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: updateUI");
+    private void updateUI() {
         boolean sdCardReady = Util.isSDCardReady();
         if (sdCardReady) {
             if (preViewPage != ViewPage.Invalid) {
@@ -574,14 +574,14 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
 
     // process file changed notification, using a timer to avoid frequent
     // refreshing due to batch changing on file system
-    synchronized public void notifyFileChanged() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: notifyFileChanged");
+    synchronized public void notifyFileChanged() {
         if (timer != null) {
             timer.cancel();
         }
         timer = new Timer();
         timer.schedule(new TimerTask() {
 
-            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: run");
+            public void run() {
                 timer = null;
                 Message message = new Message();
                 message.what = MSG_FILE_CHANGED_TIMER;
@@ -596,7 +596,7 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
     private Timer timer;
 
     private Handler handler = new Handler() {
-        public void handleMessage(Message msg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: handleMessage");
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_FILE_CHANGED_TIMER:
                     updateUI();
@@ -609,12 +609,12 @@ public class FileCategoryActivity extends Fragment implements IFileInteractionLi
 
     // update the count of favorite
     @Override
-    public void onFavoriteDatabaseChanged() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: onFavoriteDatabaseChanged");
+    public void onFavoriteDatabaseChanged() {
         setCategoryCount(FileCategory.Favorite, mFavoriteList.getCount());
     }
 
     @Override
-    public void runOnUiThread(Runnable r) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileCategoryActivity.java: runOnUiThread");
+    public void runOnUiThread(Runnable r) {
         mActivity.runOnUiThread(r);
     }
 }

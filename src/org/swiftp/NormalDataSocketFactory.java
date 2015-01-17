@@ -50,7 +50,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 	}
 		
 	
-	private void clearState() {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: clearState");
+	private void clearState() {
 		/**
 		 * Clears the state of this object, as if no pasv() or port() had occurred.
 		 * All sockets are closed.
@@ -66,7 +66,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		myLog.l(Log.DEBUG, "NormalDataSocketFactory state cleared");
 	}
 	
-	public int onPasv() {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: onPasv");
+	public int onPasv() {
 		clearState();
 		try {
 			// Listen on any port (port parameter 0)
@@ -80,14 +80,14 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		}
 	}
 
-	public boolean onPort(InetAddress remoteAddr, int remotePort) {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: onPort");
+	public boolean onPort(InetAddress remoteAddr, int remotePort) {
 		clearState();
 		this.remoteAddr = remoteAddr;
 		this.remotePort = remotePort;
 		return true;
 	}
 	
-	public Socket onTransfer() {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: onTransfer");
+	public Socket onTransfer() {
 		if(server == null) {
 			// We're in PORT mode (not PASV)
 			if(remoteAddr == null || remotePort == 0) {
@@ -136,7 +136,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 	 * of the PASV response).
 	 * @return The port number, or -1 if error.
 	 */
-	public int getPortNumber() {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: getPortNumber");
+	public int getPortNumber() {
 		if(server != null) {
 			return server.getLocalPort(); // returns -1 if serversocket is unbound 
 		} else {
@@ -144,12 +144,12 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		}
 	}
 	
-	public InetAddress getPasvIp() {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: getPasvIp");
+	public InetAddress getPasvIp() {
 		//String retVal = server.getInetAddress().getHostAddress();
 		return FTPServerService.getWifiIp();
 	}
 	
-	public void reportTraffic(long bytes) {Log.d("shanlihou", "../../mifile//src/org/swiftp/NormalDataSocketFactory.java: reportTraffic");
+	public void reportTraffic(long bytes) {
 		// ignore, we don't care about how much traffic goes over wifi.
 	}
 }

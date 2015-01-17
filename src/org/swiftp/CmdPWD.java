@@ -31,7 +31,7 @@ public class CmdPWD extends FtpCmd implements Runnable {
         super(sessionThread, CmdPWD.class.toString());
     }
 
-    public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdPWD.java: run");
+    public void run() {
         myLog.l(Log.DEBUG, "PWD executing");
 
         // We assume that the chroot restriction has been applied, and that

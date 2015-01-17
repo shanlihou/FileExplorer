@@ -29,10 +29,10 @@ public class QuotaStats {
 		this.used = used;
 	}
 	
-	public int getQuota() {Log.d("shanlihou", "../../mifile//src/org/swiftp/QuotaStats.java: getQuota");
+	public int getQuota() {
 		return quota;
 	}
-	public int getUsed() {Log.d("shanlihou", "../../mifile//src/org/swiftp/QuotaStats.java: getUsed");
+	public int getUsed() {
 		return used;
 	}
 }

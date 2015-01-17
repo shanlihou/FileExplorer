@@ -35,15 +35,15 @@ public class CmdMap {
 		return cmdClass;
 	}
 
-	public void setCommand(Class<? extends FtpCmd> cmdClass) {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdMap.java: setCommand");
+	public void setCommand(Class<? extends FtpCmd> cmdClass) {
 		this.cmdClass = cmdClass;
 	}
 
-	public String getName() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdMap.java: getName");
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdMap.java: setName");
+	public void setName(String name) {
 		this.name = name;
 	}
 }

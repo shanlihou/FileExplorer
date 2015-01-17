@@ -93,6 +93,9 @@
             android:value=".SearchActivity" />
 
         <service android:name=".FTPServerService" />
+        <activity android:name=".DecryptActivity">
+
+        </activity>
     </application>
 
 </manifest>

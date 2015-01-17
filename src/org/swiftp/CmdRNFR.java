@@ -31,7 +31,7 @@ public class CmdRNFR extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdRNFR.java: run");
+	public void run() {
 		String param = getParameter(input);
 		String errString = null;
 		File file = null;

@@ -67,7 +67,7 @@ public class FileIconLoader implements Callback {
 
         int state;
 
-        public static ImageHolder create(FileCategory cate) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: create");
+        public static ImageHolder create(FileCategory cate) {
             switch (cate) {
                 case Apk:
                     return new DrawableHolder();
@@ -90,7 +90,7 @@ public class FileIconLoader implements Callback {
         SoftReference<Bitmap> bitmapRef;
 
         @Override
-        public boolean setImageView(ImageView v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: setImageView");
+        public boolean setImageView(ImageView v) {
             if (bitmapRef.get() == null)
                 return false;
             v.setImageBitmap(bitmapRef.get());
@@ -98,12 +98,12 @@ public class FileIconLoader implements Callback {
         }
 
         @Override
-        public boolean isNull() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: isNull");
+        public boolean isNull() {
             return bitmapRef == null;
         }
 
         @Override
-        public void setImage(Object image) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: setImage");
+        public void setImage(Object image) {
             bitmapRef = image == null ? null : new SoftReference<Bitmap>((Bitmap) image);
         }
     }
@@ -112,7 +112,7 @@ public class FileIconLoader implements Callback {
         SoftReference<Drawable> drawableRef;
 
         @Override
-        public boolean setImageView(ImageView v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: setImageView");
+        public boolean setImageView(ImageView v) {
             if (drawableRef.get() == null)
                 return false;
 
@@ -121,12 +121,12 @@ public class FileIconLoader implements Callback {
         }
 
         @Override
-        public boolean isNull() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: isNull");
+        public boolean isNull() {
             return drawableRef == null;
         }
 
         @Override
-        public void setImage(Object image) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: setImage");
+        public void setImage(Object image) {
             drawableRef = image == null ? null : new SoftReference<Drawable>((Drawable) image);
         }
     }
@@ -203,7 +203,7 @@ public class FileIconLoader implements Callback {
      *
      * @param id, database id
      */
-    public boolean loadIcon(ImageView view, String path, long id, FileCategory cate) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: loadIcon");
+    public boolean loadIcon(ImageView view, String path, long id, FileCategory cate) {
         boolean loaded = loadCachedIcon(view, path, cate);
         if (loaded) {
             mPendingRequests.remove(view);
@@ -218,7 +218,7 @@ public class FileIconLoader implements Callback {
         return loaded;
     }
 
-    public void cancelRequest(ImageView view) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: cancelRequest");
+    public void cancelRequest(ImageView view) {
         mPendingRequests.remove(view);
     }
 
@@ -227,7 +227,7 @@ public class FileIconLoader implements Callback {
      * view, otherwise sets the state of the photo to
      * {@link BitmapHolder#NEEDED}
      */
-    private boolean loadCachedIcon(ImageView view, String path, FileCategory cate) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: loadCachedIcon");
+    private boolean loadCachedIcon(ImageView view, String path, FileCategory cate) {
         ImageHolder holder = mImageCache.get(path);
         
         if (holder == null) {
@@ -252,7 +252,7 @@ public class FileIconLoader implements Callback {
         return false;
     }
 
-    public long getDbId(String path, boolean isVideo) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: getDbId");
+    public long getDbId(String path, boolean isVideo) {
         String volumeName = "external";
         Uri uri = isVideo ? Video.Media.getContentUri(volumeName) : Images.Media.getContentUri(volumeName);
         String selection = FileColumns.DATA + "=?";
@@ -282,7 +282,7 @@ public class FileIconLoader implements Callback {
      * Stops loading images, kills the image loader thread and clears all
      * caches.
      */
-    public void stop() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: stop");
+    public void stop() {
         pause();
 
         if (mLoaderThread != null) {
@@ -293,7 +293,7 @@ public class FileIconLoader implements Callback {
         clear();
     }
 
-    public void clear() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: clear");
+    public void clear() {
         mPendingRequests.clear();
         mImageCache.clear();
     }
@@ -301,14 +301,14 @@ public class FileIconLoader implements Callback {
     /**
      * Temporarily stops loading
      */
-    public void pause() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: pause");
+    public void pause() {
         mPaused = true;
     }
 
     /**
      * Resumes loading
      */
-    public void resume() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: resume");
+    public void resume() {
         mPaused = false;
         if (!mPendingRequests.isEmpty()) {
             requestLoading();
@@ -321,7 +321,7 @@ public class FileIconLoader implements Callback {
      * get a chance to request their respective photos before any of those
      * requests are executed. This allows us to load images in bulk.
      */
-    private void requestLoading() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: requestLoading");
+    private void requestLoading() {
         if (!mLoadingRequested) {
             mLoadingRequested = true;
             mMainThreadHandler.sendEmptyMessage(MESSAGE_REQUEST_LOADING);
@@ -331,7 +331,7 @@ public class FileIconLoader implements Callback {
     /**
      * Processes requests on the main thread.
      */
-    public boolean handleMessage(Message msg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: handleMessage");
+    public boolean handleMessage(Message msg) {
         switch (msg.what) {
             case MESSAGE_REQUEST_LOADING: {
                 mLoadingRequested = false;
@@ -361,7 +361,7 @@ public class FileIconLoader implements Callback {
      * the photos still haven't been loaded, sends another request for image
      * loading.
      */
-    private void processLoadedIcons() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: processLoadedIcons");
+    private void processLoadedIcons() {
         Iterator<ImageView> iterator = mPendingRequests.keySet().iterator();
         while (iterator.hasNext()) {
             ImageView view = iterator.next();
@@ -391,7 +391,7 @@ public class FileIconLoader implements Callback {
         /**
          * Sends a message to this thread to load requested photos.
          */
-        public void requestLoading() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: requestLoading");
+        public void requestLoading() {
             if (mLoaderThreadHandler == null) {
                 mLoaderThreadHandler = new Handler(getLooper(), this);
             }
@@ -402,7 +402,7 @@ public class FileIconLoader implements Callback {
          * Receives the above message, loads photos and then sends a message to
          * the main thread to process them.
          */
-        public boolean handleMessage(Message msg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: handleMessage");
+        public boolean handleMessage(Message msg) {
             Iterator<FileId> iterator = mPendingRequests.values().iterator();
             while (iterator.hasNext()) {
                 FileId id = iterator.next();
@@ -438,11 +438,11 @@ public class FileIconLoader implements Callback {
 
         private static final int MICRO_KIND = 3;
 
-        private Bitmap getImageThumbnail(long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: getImageThumbnail");
+        private Bitmap getImageThumbnail(long id) {
             return Images.Thumbnails.getThumbnail(mContext.getContentResolver(), id, MICRO_KIND, null);
         }
 
-        private Bitmap getVideoThumbnail(long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileIconLoader.java: getVideoThumbnail");
+        private Bitmap getVideoThumbnail(long id) {
             return Video.Thumbnails.getThumbnail(mContext.getContentResolver(), id, MICRO_KIND, null);
         }
     }

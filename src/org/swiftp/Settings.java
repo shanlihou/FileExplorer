@@ -29,39 +29,39 @@ public class Settings {
 	protected static int serverLogScrollBack = 10;
 	protected static int uiLogLevel = Log.INFO;
 	
-	public static int getUiLogLevel() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: getUiLogLevel");
+	public static int getUiLogLevel() {
 		return uiLogLevel;
 	}
 
-	public static void setUiLogLevel(int uiLogLevel) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: setUiLogLevel");
+	public static void setUiLogLevel(int uiLogLevel) {
 		Settings.uiLogLevel = uiLogLevel;
 	}
 
-	public static int getInputBufferSize() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: getInputBufferSize");
+	public static int getInputBufferSize() {
 		return inputBufferSize;
 	}
 
-	public static void setInputBufferSize(int inputBufferSize) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: setInputBufferSize");
+	public static void setInputBufferSize(int inputBufferSize) {
 		Settings.inputBufferSize = inputBufferSize;
 	}
 
-	public static boolean isAllowOverwrite() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: isAllowOverwrite");
+	public static boolean isAllowOverwrite() {
 		return allowOverwrite;
 	}
 
-	public static void setAllowOverwrite(boolean allowOverwrite) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: setAllowOverwrite");
+	public static void setAllowOverwrite(boolean allowOverwrite) {
 		Settings.allowOverwrite = allowOverwrite;
 	}
 
-	public static int getDataChunkSize() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: getDataChunkSize");
+	public static int getDataChunkSize() {
 		return dataChunkSize;
 	}
 
-	public static void setDataChunkSize(int dataChunkSize) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: setDataChunkSize");
+	public static void setDataChunkSize(int dataChunkSize) {
 		Settings.dataChunkSize = dataChunkSize;
 	}
 
-	public static int getSessionMonitorScrollBack() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: getSessionMonitorScrollBack");
+	public static int getSessionMonitorScrollBack() {
 		return sessionMonitorScrollBack;
 	}
 
@@ -71,11 +71,11 @@ public class Settings {
 		Settings.sessionMonitorScrollBack = sessionMonitorScrollBack;
 	}
 
-	public static int getServerLogScrollBack() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: getServerLogScrollBack");
+	public static int getServerLogScrollBack() {
 		return serverLogScrollBack;
 	}
 
-	public static void setLogScrollBack(int serverLogScrollBack) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Settings.java: setLogScrollBack");
+	public static void setLogScrollBack(int serverLogScrollBack) {
 		Settings.serverLogScrollBack = serverLogScrollBack;
 	}
 	

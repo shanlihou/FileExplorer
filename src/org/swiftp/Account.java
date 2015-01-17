@@ -23,11 +23,11 @@ import android.util.Log;
 public class Account {
 	protected String username = null;
 
-	public String getUsername() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Account.java: getUsername");
+	public String getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Account.java: setUsername");
+	public void setUsername(String username) {
 		this.username = username;
 	}
 	

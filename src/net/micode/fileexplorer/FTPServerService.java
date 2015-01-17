@@ -106,7 +106,7 @@ public class FTPServerService extends Service implements Runnable {
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
-        public void onReceive(Context context, Intent intent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: onReceive");
+        public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (action.equals(Intent.ACTION_MEDIA_UNMOUNTED) && isRunning()) {
                 stopSelf();
@@ -117,12 +117,12 @@ public class FTPServerService extends Service implements Runnable {
     public FTPServerService() {
     }
 
-    public IBinder onBind(Intent intent) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: onBind");
+    public IBinder onBind(Intent intent) {
         // We don't implement this functionality, so ignore it
         return null;
     }
 
-    public void onCreate() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: onCreate");
+    public void onCreate() {
         myLog.l(Log.DEBUG, "SwiFTP server created");
         // Set the application-wide context global, if not already set
         Context myContext = Globals.getContext();
@@ -140,7 +140,7 @@ public class FTPServerService extends Service implements Runnable {
         return;
     }
 
-    public void onStart(Intent intent, int startId) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: onStart");
+    public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
 
         shouldExit = false;
@@ -164,7 +164,7 @@ public class FTPServerService extends Service implements Runnable {
         // todo: we should broadcast an intent to inform anyone who cares
     }
 
-    public static boolean isRunning() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: isRunning");
+    public static boolean isRunning() {
         // return true if and only if a server Thread is running
         if (serverThread == null) {
             staticLog.l(Log.DEBUG, "Server is not running (null serverThread)");
@@ -178,7 +178,7 @@ public class FTPServerService extends Service implements Runnable {
         return true;
     }
 
-    public void onDestroy() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: onDestroy");
+    public void onDestroy() {
         myLog.l(Log.INFO, "onDestroy() Stopping server");
         shouldExit = true;
         if (serverThread == null) {
@@ -218,7 +218,7 @@ public class FTPServerService extends Service implements Runnable {
         myLog.d("FTPServerService.onDestroy() finished");
     }
 
-    private boolean loadSettings() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: loadSettings");
+    private boolean loadSettings() {
         myLog.l(Log.DEBUG, "Loading settings");
         settings = getSharedPreferences(Defaults.getSettingsName(), Defaults.getSettingsMode());
         port = settings.getInt("portNum", Defaults.portNumber);
@@ -242,7 +242,7 @@ public class FTPServerService extends Service implements Runnable {
         listenSocket.bind(new InetSocketAddress(port));
     }
 
-    private void setupNotification() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: setupNotification");
+    private void setupNotification() {
         // http://developer.android.com/guide/topics/ui/notifiers/notifications.html
 
         // Instantiate a Notification
@@ -271,12 +271,12 @@ public class FTPServerService extends Service implements Runnable {
         myLog.d("Notication setup done");
     }
 
-    private void clearNotification() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: clearNotification");
+    private void clearNotification() {
         stopForeground(true);
         myLog.d("Cleared notification");
     }
 
-    private boolean safeSetupListener() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: safeSetupListener");
+    private boolean safeSetupListener() {
         try {
             setupListener();
         } catch (IOException e) {
@@ -287,7 +287,7 @@ public class FTPServerService extends Service implements Runnable {
         return true;
     }
 
-    public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: run");
+    public void run() {
         // The UI will want to check the server status to update its
         // start/stop server button
         int consecutiveProxyStartFailures = 0;
@@ -427,7 +427,7 @@ public class FTPServerService extends Service implements Runnable {
         releaseWifiLock();
     }
 
-    private void terminateAllSessions() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: terminateAllSessions");
+    private void terminateAllSessions() {
         myLog.i("Terminating " + sessionThreads.size() + " session thread(s)");
         synchronized (this) {
             for (SessionThread sessionThread : sessionThreads) {
@@ -439,7 +439,7 @@ public class FTPServerService extends Service implements Runnable {
         }
     }
 
-    public void cleanupAndStopService() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: cleanupAndStopService");
+    public void cleanupAndStopService() {
         // Call the Android Service shutdown function
         Context context = getApplicationContext();
         Intent intent = new Intent(context, FTPServerService.class);
@@ -449,7 +449,7 @@ public class FTPServerService extends Service implements Runnable {
         clearNotification();
     }
 
-    private void takeWakeLock() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: takeWakeLock");
+    private void takeWakeLock() {
         if (wakeLock == null) {
             PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
@@ -471,7 +471,7 @@ public class FTPServerService extends Service implements Runnable {
         wakeLock.acquire();
     }
 
-    private void releaseWakeLock() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: releaseWakeLock");
+    private void releaseWakeLock() {
         myLog.d("Releasing wake lock");
         if (wakeLock != null) {
             wakeLock.release();
@@ -482,7 +482,7 @@ public class FTPServerService extends Service implements Runnable {
         }
     }
 
-    private void takeWifiLock() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: takeWifiLock");
+    private void takeWifiLock() {
         myLog.d("Taking wifi lock");
         if (wifiLock == null) {
             WifiManager manager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
@@ -492,7 +492,7 @@ public class FTPServerService extends Service implements Runnable {
         wifiLock.acquire();
     }
 
-    private void releaseWifiLock() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: releaseWifiLock");
+    private void releaseWifiLock() {
         myLog.d("Releasing wifi lock");
         if (wifiLock != null) {
             wifiLock.release();
@@ -500,7 +500,7 @@ public class FTPServerService extends Service implements Runnable {
         }
     }
 
-    public void errorShutdown() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: errorShutdown");
+    public void errorShutdown() {
         myLog.l(Log.ERROR, "Service errorShutdown() called");
         cleanupAndStopService();
     }
@@ -510,7 +510,7 @@ public class FTPServerService extends Service implements Runnable {
      *
      * @return The integer IP address if wifi enabled, or null if not.
      */
-    public static InetAddress getWifiIp() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: getWifiIp");
+    public static InetAddress getWifiIp() {
         Context myContext = Globals.getContext();
         if (myContext == null) {
             throw new NullPointerException("Global context is null");
@@ -528,7 +528,7 @@ public class FTPServerService extends Service implements Runnable {
         }
     }
 
-    public static boolean isWifiEnabled() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: isWifiEnabled");
+    public static boolean isWifiEnabled() {
         Context myContext = Globals.getContext();
         if (myContext == null) {
             throw new NullPointerException("Global context is null");
@@ -553,7 +553,7 @@ public class FTPServerService extends Service implements Runnable {
         return new ArrayList<String>(serverLog);
     }
 
-    public static void log(int msgLevel, String s) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: log");
+    public static void log(int msgLevel, String s) {
         serverLog.add(s);
         int maxSize = Defaults.getServerLogScrollBack();
         while (serverLog.size() > maxSize) {
@@ -562,14 +562,14 @@ public class FTPServerService extends Service implements Runnable {
         // updateClients();
     }
 
-    public static void updateClients() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: updateClients");
+    public static void updateClients() {
         UiUpdater.updateClients();
     }
 
-    public static void writeMonitor(boolean incoming, String s) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: writeMonitor");
+    public static void writeMonitor(boolean incoming, String s) {
     }
 
-    // public static void writeMonitor(boolean incoming, String s) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: writeMonitor");
+    // public static void writeMonitor(boolean incoming, String s) {
     // if(incoming) {
     // s = "> " + s;
     // } else {
@@ -583,11 +583,11 @@ public class FTPServerService extends Service implements Runnable {
     // updateClients();
     // }
 
-    public static int getPort() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: getPort");
+    public static int getPort() {
         return port;
     }
 
-    public static void setPort(int port) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: setPort");
+    public static void setPort(int port) {
         FTPServerService.port = port;
     }
 
@@ -595,7 +595,7 @@ public class FTPServerService extends Service implements Runnable {
      * The FTPServerService must know about all running session threads so they
      * can be terminated on exit. Called when a new session is created.
      */
-    public void registerSessionThread(SessionThread newSession) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: registerSessionThread");
+    public void registerSessionThread(SessionThread newSession) {
         // Before adding the new session thread, clean up any finished session
         // threads that are present in the list.
 
@@ -629,11 +629,11 @@ public class FTPServerService extends Service implements Runnable {
     }
 
     /** Get the ProxyConnector, may return null if proxying is disabled. */
-    public ProxyConnector getProxyConnector() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: getProxyConnector");
+    public ProxyConnector getProxyConnector() {
         return proxyConnector;
     }
 
-    static public SharedPreferences getSettings() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FTPServerService.java: getSettings");
+    static public SharedPreferences getSettings() {
         return settings;
     }
 }

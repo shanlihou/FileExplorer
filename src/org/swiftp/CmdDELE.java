@@ -31,7 +31,7 @@ public class CmdDELE extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdDELE.java: run");
+	public void run() {
 		myLog.l(Log.INFO, "DELE executing");
 		String param = getParameter(input);
 		File storeFile = inputPathToChrootedFile(sessionThread.getWorkingDir(), param);

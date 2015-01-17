@@ -23,6 +23,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.R.drawable;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -100,7 +101,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         mContext = mFileViewListener.getContext();
     }
 
-    private void showProgress(String msg) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: showProgress");
+    private void showProgress(String msg) {
         progressDialog = new ProgressDialog(mContext);
         // dialog.setIcon(R.drawable.icon);
         progressDialog.setMessage(msg);
@@ -109,19 +110,19 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         progressDialog.show();
     }
 
-    public void sortCurrentList() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: sortCurrentList");
+    public void sortCurrentList() {
         mFileViewListener.sortCurrentList(mFileSortHelper);
     }
 
-    public boolean canShowCheckBox() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: canShowCheckBox");
+    public boolean canShowCheckBox() {
         return mConfirmOperationBar.getVisibility() != View.VISIBLE;
     }
 
-    private void showConfirmOperationBar(boolean show) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: showConfirmOperationBar");
+    private void showConfirmOperationBar(boolean show) {
         mConfirmOperationBar.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
-    public void addContextMenuSelectedItem() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: addContextMenuSelectedItem");
+    public void addContextMenuSelectedItem() {
         if (mCheckedFileNameList.size() == 0) {
             int pos = mListViewContextMenuSelectedItem;
             if (pos != -1) {
@@ -137,13 +138,13 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return mCheckedFileNameList;
     }
 
-    public boolean canPaste() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: canPaste");
+    public boolean canPaste() {
         return mFileOperationHelper.canPaste();
     }
 
     // operation finish notification
     @Override
-    public void onFinish() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onFinish");
+    public void onFinish() {
         if (progressDialog != null) {
             progressDialog.dismiss();
             progressDialog = null;
@@ -151,7 +152,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
         mFileViewListener.runOnUiThread(new Runnable() {
             @Override
-            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: run");
+            public void run() {
                 showConfirmOperationBar(false);
                 clearSelection();
                 refreshFileList();
@@ -159,25 +160,25 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         });
     }
 
-    public FileInfo getItem(int pos) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: getItem");
+    public FileInfo getItem(int pos) {
         return mFileViewListener.getItem(pos);
     }
 
-    public boolean isInSelection() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: isInSelection");
+    public boolean isInSelection() {
         return mCheckedFileNameList.size() > 0;
     }
 
-    public boolean isMoveState() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: isMoveState");
+    public boolean isMoveState() {
         return mFileOperationHelper.isMoveState() || mFileOperationHelper.canPaste();
     }
 
-    private void setup() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setup");
+    private void setup() {
         setupNaivgationBar();
         setupFileListView();
         setupOperationPane();
     }
 
-    private void setupNaivgationBar() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setupNaivgationBar");
+    private void setupNaivgationBar() {
         mNavigationBar = mFileViewListener.getViewById(R.id.navigation_bar);
         mNavigationBarText = (TextView) mFileViewListener.getViewById(R.id.current_path_view);
         mNavigationBarUpDownArrow = (ImageView) mFileViewListener.getViewById(R.id.path_pane_arrow);
@@ -190,13 +191,13 @@ public class FileViewInteractionHub implements IOperationProgressListener {
     }
 
     // buttons
-    private void setupOperationPane() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setupOperationPane");
+    private void setupOperationPane() {
         mConfirmOperationBar = mFileViewListener.getViewById(R.id.moving_operation_bar);
         setupClick(mConfirmOperationBar, R.id.button_moving_confirm);
         setupClick(mConfirmOperationBar, R.id.button_moving_cancel);
     }
 
-    private void setupClick(View v, int id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setupClick");
+    private void setupClick(View v, int id) {
         View button = (v != null ? v.findViewById(id) : mFileViewListener.getViewById(id));
         if (button != null)
             button.setOnClickListener(buttonClick);
@@ -204,7 +205,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     private View.OnClickListener buttonClick = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onClick");
+        public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.button_operation_copy:
                     onOperationCopy();
@@ -242,11 +243,11 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     };
 
-    private void onOperationReferesh() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationReferesh");
+    private void onOperationReferesh() {
         refreshFileList();
     }
 
-    private void onOperationFavorite() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationFavorite");
+    private void onOperationFavorite() {
         String path = mCurrentPath;
 
         if (mListViewContextMenuSelectedItem != -1) {
@@ -256,7 +257,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         onOperationFavorite(path);
     }
 
-    private void onOperationSetting() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationSetting");
+    private void onOperationSetting() {
         Intent intent = new Intent(mContext, FileExplorerPreferenceActivity.class);
         if (intent != null) {
             try {
@@ -267,7 +268,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    private void onOperationFavorite(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationFavorite");
+    private void onOperationFavorite(String path) {
         FavoriteDatabaseHelper databaseHelper = FavoriteDatabaseHelper.getInstance();
         if (databaseHelper != null) {
             int stringId = 0;
@@ -283,12 +284,12 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    private void onOperationShowSysFiles() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationShowSysFiles");
+    private void onOperationShowSysFiles() {
         Settings.instance().setShowDotAndHiddenFiles(!Settings.instance().getShowDotAndHiddenFiles());
         refreshFileList();
     }
 
-    public void onOperationSelectAllOrCancel() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationSelectAllOrCancel");
+    public void onOperationSelectAllOrCancel() {
         if (!isSelectedAll()) {
             onOperationSelectAll();
         } else {
@@ -296,7 +297,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    public void onOperationSelectAll() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationSelectAll");
+    public void onOperationSelectAll() {
         mCheckedFileNameList.clear();
         for (FileInfo f : mFileViewListener.getAllFiles()) {
             f.Selected = true;
@@ -315,7 +316,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
     private OnClickListener navigationClick = new OnClickListener() {
 
         @Override
-        public void onClick(View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onClick");
+        public void onClick(View v) {
             String path = (String) v.getTag();
             assert (path != null);
             showDropdownNavigation(false);
@@ -374,7 +375,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    public boolean onOperationUpLevel() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationUpLevel");
+    public boolean onOperationUpLevel() {
         showDropdownNavigation(false);
 
         if (mFileViewListener.onOperation(GlobalConsts.OPERATION_UP_LEVEL)) {
@@ -390,12 +391,12 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return false;
     }
 
-    public void onOperationCreateFolder() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationCreateFolder");
+    public void onOperationCreateFolder() {
         TextInputDialog dialog = new TextInputDialog(mContext, mContext.getString(
                 R.string.operation_create_folder), mContext.getString(R.string.operation_create_folder_message),
                 mContext.getString(R.string.new_folder_name), new OnFinishListener() {
                     @Override
-                    public boolean onFinish(String text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onFinish");
+                    public boolean onFinish(String text) {
                         return doCreateFolder(text);
                     }
                 });
@@ -403,7 +404,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         dialog.show();
     }
 
-    private boolean doCreateFolder(String text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: doCreateFolder");
+    private boolean doCreateFolder(String text) {
         if (TextUtils.isEmpty(text))
             return false;
 
@@ -419,22 +420,22 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return true;
     }
 
-    public void onOperationSearch() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationSearch");
+    public void onOperationSearch() {
 
     }
 
-    public void onSortChanged(SortMethod s) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onSortChanged");
+    public void onSortChanged(SortMethod s) {
         if (mFileSortHelper.getSortMethod() != s) {
             mFileSortHelper.setSortMethog(s);
             sortCurrentList();
         }
     }
 
-    public void onOperationCopy() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationCopy");
+    public void onOperationCopy() {
         onOperationCopy(getSelectedFileList());
     }
 
-    public void onOperationCopy(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationCopy");
+    public void onOperationCopy(ArrayList<FileInfo> files) {
         mFileOperationHelper.Copy(files);
         clearSelection();
 
@@ -445,26 +446,26 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         refreshFileList();
     }
 
-    public void onOperationCopyPath() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationCopyPath");
+    public void onOperationCopyPath() {
         if (getSelectedFileList().size() == 1) {
             copy(getSelectedFileList().get(0).filePath);
         }
         clearSelection();
     }
 
-    private void copy(CharSequence text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: copy");
+    private void copy(CharSequence text) {
         ClipboardManager cm = (ClipboardManager) mContext.getSystemService(
                 Context.CLIPBOARD_SERVICE);
         cm.setText(text);
     }
 
-    private void onOperationPaste() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationPaste");
+    private void onOperationPaste() {
         if (mFileOperationHelper.Paste(mCurrentPath)) {
             showProgress(mContext.getString(R.string.operation_pasting));
         }
     }
 
-    public void onOperationMove() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationMove");
+    public void onOperationMove() {
         mFileOperationHelper.StartMove(getSelectedFileList());
         clearSelection();
         showConfirmOperationBar(true);
@@ -474,7 +475,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         refreshFileList();
     }
 
-    public void refreshFileList() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: refreshFileList");
+    public void refreshFileList() {
         clearSelection();
         updateNavigationPane();
 
@@ -486,7 +487,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     }
 
-    private void updateConfirmButtons() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: updateConfirmButtons");
+    private void updateConfirmButtons() {
         if (mConfirmOperationBar.getVisibility() == View.GONE)
             return;
 
@@ -502,7 +503,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         confirmButton.setText(text);
     }
 
-    private void updateNavigationPane() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: updateNavigationPane");
+    private void updateNavigationPane() {
         View upLevel = mFileViewListener.getViewById(R.id.path_pane_up_level);
         upLevel.setVisibility(mRoot.equals(mCurrentPath) ? View.INVISIBLE : View.VISIBLE);
 
@@ -512,7 +513,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         mNavigationBarText.setText(mFileViewListener.getDisplayPath(mCurrentPath));
     }
 
-    public void onOperationSend() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationSend");
+    public void onOperationSend() {
         ArrayList<FileInfo> selectedFileList = getSelectedFileList();
         for (FileInfo f : selectedFileList) {
             if (f.IsDir) {
@@ -534,7 +535,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         clearSelection();
     }
 
-    public void onOperationRename() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationRename");
+    public void onOperationRename() {
         int pos = mListViewContextMenuSelectedItem;
         if (pos == -1)
             return;
@@ -548,7 +549,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         TextInputDialog dialog = new TextInputDialog(mContext, mContext.getString(R.string.operation_rename),
                 mContext.getString(R.string.operation_rename_message), f.fileName, new OnFinishListener() {
                     @Override
-                    public boolean onFinish(String text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onFinish");
+                    public boolean onFinish(String text) {
                         return doRename(f, text);
                     }
 
@@ -557,7 +558,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         dialog.show();
     }
 
-    private boolean doRename(final FileInfo f, String text) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: doRename");
+    private boolean doRename(final FileInfo f, String text) {
         if (TextUtils.isEmpty(text))
             return false;
 
@@ -573,7 +574,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return true;
     }
 
-    private void notifyFileSystemChanged(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: notifyFileSystemChanged");
+    private void notifyFileSystemChanged(String path) {
         if (path == null)
             return;
         final File f = new File(path);
@@ -591,27 +592,31 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         mContext.sendBroadcast(intent);
     }
 
-    public void onOperationDelete() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationDelete");
+    public void onOperationDelete() {
         doOperationDelete(getSelectedFileList());
     }
 
-    public void onOperationEncrypt() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationEncrypt");
+    public void onOperationEncrypt() {
         for(int i = 0; i < getSelectedFileList().size(); i++){
             FileInfo file = getSelectedFileList().get(i);
-            Log.d("shanlihou", "fileName:" + file.fileName);
+            
             mFileOperationHelper.EncryptFile(file, mContext);
         }
     }
 
-    public void onOperationDecrypt(){Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationDecrypt");
-        for(int i = 0; i < getSelectedFileList().size(); i++){
-            FileInfo file = getSelectedFileList().get(i);
-            Log.d("shanlihou", "fileName:" + file.fileName);
-            mFileOperationHelper.DecryptFile(file, mContext);
+    public void onOperationDecrypt(){
+        if (getSelectedFileList().size() == 1){
+            FileInfo file = getSelectedFileList().get(0);
+            Log.d("shanlihou", file.fileName);
+            if (file.fileName.equals("shily")){
+                
+                Intent intent = new Intent(mContext, DecryptActivity.class);
+                mContext.startActivity(intent);
+            }
         }
     }
 
-    public void onOperationDelete(int position) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationDelete");
+    public void onOperationDelete(int position) {
         FileInfo file = mFileViewListener.getItem(position);
         if (file == null)
             return;
@@ -621,12 +626,12 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         doOperationDelete(selectedFileList);
     }
 
-    private void doOperationDelete(final ArrayList<FileInfo> selectedFileList) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: doOperationDelete");
+    private void doOperationDelete(final ArrayList<FileInfo> selectedFileList) {
         final ArrayList<FileInfo> selectedFiles = new ArrayList<FileInfo>(selectedFileList);
         Dialog dialog = new AlertDialog.Builder(mContext)
                 .setMessage(mContext.getString(R.string.operation_delete_confirm_message))
                 .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onClick");
+                    public void onClick(DialogInterface dialog, int whichButton) {
                         if (mFileOperationHelper.Delete(selectedFiles)) {
                             showProgress(mContext.getString(R.string.operation_deleting));
                         }
@@ -634,14 +639,14 @@ public class FileViewInteractionHub implements IOperationProgressListener {
                     }
                 }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onClick");
+                    public void onClick(DialogInterface dialog, int which) {
                         clearSelection();
                     }
                 }).create();
         dialog.show();
     }
 
-    public void onOperationInfo() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationInfo");
+    public void onOperationInfo() {
         if (getSelectedFileList().size() == 0)
             return;
 
@@ -655,7 +660,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         clearSelection();
     }
 
-    public void onOperationButtonConfirm() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationButtonConfirm");
+    public void onOperationButtonConfirm() {
         if (isSelectingFiles()) {
             mSelectFilesCallback.selected(mCheckedFileNameList);
             mSelectFilesCallback = null;
@@ -669,7 +674,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    public void onOperationButtonCancel() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onOperationButtonCancel");
+    public void onOperationButtonCancel() {
         mFileOperationHelper.clear();
         showConfirmOperationBar(false);
         if (isSelectingFiles()) {
@@ -688,7 +693,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
     // context menu
     private OnCreateContextMenuListener mListViewContextMenuListener = new OnCreateContextMenuListener() {
         @Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onCreateContextMenu");
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
             if (isInSelection() || isMoveState())
                 return;
 
@@ -729,13 +734,13 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     private int mListViewContextMenuSelectedItem;
 
-    private void setupFileListView() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setupFileListView");
+    private void setupFileListView() {
         mFileListView = (ListView) mFileViewListener.getViewById(R.id.file_path_list);
         mFileListView.setLongClickable(true);
         mFileListView.setOnCreateContextMenuListener(mListViewContextMenuListener);
         mFileListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onItemClick");
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 onListItemClick(parent, view, position, id);
             }
         });
@@ -778,7 +783,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
     private OnMenuItemClickListener menuItemClick = new OnMenuItemClickListener() {
 
         @Override
-        public boolean onMenuItemClick(MenuItem item) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onMenuItemClick");
+        public boolean onMenuItemClick(MenuItem item) {
             AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
             mListViewContextMenuSelectedItem = info != null ? info.position : -1;
 
@@ -879,7 +884,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     private SelectFilesCallback mSelectFilesCallback;
 
-    public boolean onCreateOptionsMenu(Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onCreateOptionsMenu");
+    public boolean onCreateOptionsMenu(Menu menu) {
         clearSelection();
         showDropdownNavigation(false);
 
@@ -913,11 +918,11 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return true;
     }
 
-    private void addMenuItem(Menu menu, int itemId, int order, int string) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: addMenuItem");
+    private void addMenuItem(Menu menu, int itemId, int order, int string) {
         addMenuItem(menu, itemId, order, string, -1);
     }
 
-    private void addMenuItem(Menu menu, int itemId, int order, int string, int iconRes) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: addMenuItem");
+    private void addMenuItem(Menu menu, int itemId, int order, int string, int iconRes) {
         if (!mFileViewListener.shouldHideMenu(itemId)) {
             MenuItem item = menu.add(0, itemId, order, string).setOnMenuItemClickListener(menuItemClick);
             if (iconRes > 0) {
@@ -926,12 +931,12 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    public boolean onPrepareOptionsMenu(Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onPrepareOptionsMenu");
+    public boolean onPrepareOptionsMenu(Menu menu) {
         updateMenuItems(menu);
         return true;
     }
 
-    private void updateMenuItems(Menu menu) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: updateMenuItems");
+    private void updateMenuItems(Menu menu) {
         menu.findItem(MENU_SELECTALL).setTitle(
                 isSelectedAll() ? R.string.operation_cancel_selectall : R.string.operation_selectall);
         menu.findItem(MENU_SELECTALL).setEnabled(mCurrentMode != Mode.Pick);
@@ -953,19 +958,19 @@ public class FileViewInteractionHub implements IOperationProgressListener {
 
     }
 
-    public boolean isFileSelected(String filePath) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: isFileSelected");
+    public boolean isFileSelected(String filePath) {
         return mFileOperationHelper.isFileSelected(filePath);
     }
 
-    public void setMode(Mode m) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setMode");
+    public void setMode(Mode m) {
         mCurrentMode = m;
     }
 
-    public Mode getMode() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: getMode");
+    public Mode getMode() {
         return mCurrentMode;
     }
 
-    public void onListItemClick(AdapterView<?> parent, View view, int position, long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onListItemClick");
+    public void onListItemClick(AdapterView<?> parent, View view, int position, long id) {
         FileInfo lFileInfo = mFileViewListener.getItem(position);
         showDropdownNavigation(false);
 
@@ -1012,29 +1017,29 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         refreshFileList();
     }
 
-    public void setRootPath(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setRootPath");
+    public void setRootPath(String path) {
         mRoot = path;
         mCurrentPath = path;
     }
 
-    public String getRootPath() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: getRootPath");
+    public String getRootPath() {
         return mRoot;
     }
 
-    public String getCurrentPath() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: getCurrentPath");
+    public String getCurrentPath() {
         return mCurrentPath;
     }
 
-    public void setCurrentPath(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: setCurrentPath");
+    public void setCurrentPath(String path) {
         mCurrentPath = path;
     }
 
-    private String getAbsoluteName(String path, String name) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: getAbsoluteName");
+    private String getAbsoluteName(String path, String name) {
         return path.equals(GlobalConsts.ROOT_PATH) ? path + name : path + File.separator + name;
     }
 
     // check or uncheck
-    public boolean onCheckItem(FileInfo f, View v) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onCheckItem");
+    public boolean onCheckItem(FileInfo f, View v) {
         if (isMoveState())
             return false;
 
@@ -1049,19 +1054,19 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return true;
     }
 
-    private boolean isSelectingFiles() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: isSelectingFiles");
+    private boolean isSelectingFiles() {
         return mSelectFilesCallback != null;
     }
 
-    public boolean isSelectedAll() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: isSelectedAll");
+    public boolean isSelectedAll() {
         return mFileViewListener.getItemCount() != 0 && mCheckedFileNameList.size() == mFileViewListener.getItemCount();
     }
     
-    public boolean isSelected() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: isSelected");
+    public boolean isSelected() {
         return mCheckedFileNameList.size() != 0;
     }
 
-    public void clearSelection() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: clearSelection");
+    public void clearSelection() {
         if (mCheckedFileNameList.size() > 0) {
             for (FileInfo f : mCheckedFileNameList) {
                 if (f == null) {
@@ -1074,7 +1079,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    private void viewFile(FileInfo lFileInfo) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: viewFile");
+    private void viewFile(FileInfo lFileInfo) {
         try {
             IntentBuilder.viewFile(mContext, lFileInfo.filePath);
         } catch (ActivityNotFoundException e) {
@@ -1082,7 +1087,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         }
     }
 
-    public boolean onBackPressed() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onBackPressed");
+    public boolean onBackPressed() {
         if (mDropdownNavigation.getVisibility() == View.VISIBLE) {
             mDropdownNavigation.setVisibility(View.GONE);
         } else if (isInSelection()) {
@@ -1093,11 +1098,11 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         return true;
     }
 
-    public void copyFile(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: copyFile");
+    public void copyFile(ArrayList<FileInfo> files) {
         mFileOperationHelper.Copy(files);
     }
 
-    public void moveFileFrom(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: moveFileFrom");
+    public void moveFileFrom(ArrayList<FileInfo> files) {
         mFileOperationHelper.StartMove(files);
         showConfirmOperationBar(true);
         updateConfirmButtons();
@@ -1105,7 +1110,7 @@ public class FileViewInteractionHub implements IOperationProgressListener {
         refreshFileList();
     }
 
-    private void showDropdownNavigation(boolean show) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: showDropdownNavigation");
+    private void showDropdownNavigation(boolean show) {
         mDropdownNavigation.setVisibility(show ? View.VISIBLE : View.GONE);
         mNavigationBarUpDownArrow
                 .setImageResource(mDropdownNavigation.getVisibility() == View.VISIBLE ? R.drawable.arrow_up
@@ -1113,11 +1118,11 @@ public class FileViewInteractionHub implements IOperationProgressListener {
     }
 
     @Override
-    public void onFileChanged(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: onFileChanged");
+    public void onFileChanged(String path) {
         notifyFileSystemChanged(path);
     }
 
-    public void startSelectFiles(SelectFilesCallback callback) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileViewInteractionHub.java: startSelectFiles");
+    public void startSelectFiles(SelectFilesCallback callback) {
         mSelectFilesCallback = callback;
         showConfirmOperationBar(true);
         updateConfirmButtons();

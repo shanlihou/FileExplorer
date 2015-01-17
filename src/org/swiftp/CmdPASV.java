@@ -30,7 +30,7 @@ public class CmdPASV extends FtpCmd implements Runnable {
 		super(sessionThread, CmdPASV.class.toString());
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdPASV.java: run");
+	public void run() {
 		String cantOpen = "502 Couldn't open a port\r\n";
 		myLog.l(Log.DEBUG, "PASV running");
 		int port;

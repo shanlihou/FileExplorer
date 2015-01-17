@@ -55,7 +55,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		clearState();
 	}
 	
-	private void clearState() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: clearState");
+	private void clearState() {
 		if(socket != null) {
 			try {
 				socket.close();
@@ -68,7 +68,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		clientPort = 0;
 	}
 
-	public InetAddress getPasvIp() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: getPasvIp");
+	public InetAddress getPasvIp() {
 		ProxyConnector pc = Globals.getProxyConnector();
 		if(pc == null) {
 			return null;
@@ -76,12 +76,12 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		return pc.getProxyIp();
 	}
 
-//	public int getPortNumber() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: getPortNumber");
+//	public int getPortNumber() {
 //		if(socket == )
 //		return 0;
 //	}
 
-	public int onPasv() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: onPasv");
+	public int onPasv() {
 		clearState();
 		proxyConnector = Globals.getProxyConnector();
 		if(proxyConnector == null) {
@@ -100,7 +100,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		return proxyListenPort;
 	}
 
-	public boolean onPort(InetAddress dest, int port) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: onPort");
+	public boolean onPort(InetAddress dest, int port) {
 		clearState();
 		proxyConnector = Globals.getProxyConnector();
 		this.clientAddress = dest;
@@ -119,7 +119,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 	 * can then be handed back to the SessionThread which can use it as
 	 * if it were directly connected to the client.
 	 */
-	public Socket onTransfer() {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: onTransfer");
+	public Socket onTransfer() {
 		if(proxyConnector == null) {
 			myLog.w("Unexpected null proxyConnector in onTransfer");
 			return null;
@@ -145,7 +145,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		}
 	}
 	
-	public void reportTraffic(long bytes) {Log.d("shanlihou", "../../mifile//src/org/swiftp/ProxyDataSocketFactory.java: reportTraffic");
+	public void reportTraffic(long bytes) {
 		ProxyConnector pc = Globals.getProxyConnector();
 		if(pc == null) {
 			myLog.d("Can't report traffic, null ProxyConnector");

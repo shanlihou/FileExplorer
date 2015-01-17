@@ -61,69 +61,69 @@ public class Defaults {
 	public static final boolean do_mediascanner_notify = true;
 	
 	
-//	public static int getIpRetrievalAttempts() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getIpRetrievalAttempts");
+//	public static int getIpRetrievalAttempts() {
 //		return ipRetrievalAttempts;
 //	}
 
-//	public static void setIpRetrievalAttempts(int ipRetrievalAttempts) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setIpRetrievalAttempts");
+//	public static void setIpRetrievalAttempts(int ipRetrievalAttempts) {
 //		Defaults.ipRetrievalAttempts = ipRetrievalAttempts;
 //	}
 
-	public static int getPortNumber() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getPortNumber");
+	public static int getPortNumber() {
 		return portNumber;
 	}
 
-	public static void setPortNumber(int portNumber) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setPortNumber");
+	public static void setPortNumber(int portNumber) {
 		Defaults.portNumber = portNumber;
 	}
 
-	public static String getSettingsName() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getSettingsName");
+	public static String getSettingsName() {
 		return settingsName;
 	}
 
-	public static void setSettingsName(String settingsName) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setSettingsName");
+	public static void setSettingsName(String settingsName) {
 		Defaults.settingsName = settingsName;
 	}
 
-	public static int getSettingsMode() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getSettingsMode");
+	public static int getSettingsMode() {
 		return settingsMode;
 	}
 
-	public static void setSettingsMode(int settingsMode) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setSettingsMode");
+	public static void setSettingsMode(int settingsMode) {
 		Defaults.settingsMode = settingsMode;
 	}
 
-	public static void setServerLogScrollBack(int serverLogScrollBack) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setServerLogScrollBack");
+	public static void setServerLogScrollBack(int serverLogScrollBack) {
 		Defaults.serverLogScrollBack = serverLogScrollBack;
 	}
 
 	protected static int settingsMode = Context.MODE_WORLD_WRITEABLE;
 	
-	public static int getUiLogLevel() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getUiLogLevel");
+	public static int getUiLogLevel() {
 		return uiLogLevel;
 	}
 
-	public static void setUiLogLevel(int uiLogLevel) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setUiLogLevel");
+	public static void setUiLogLevel(int uiLogLevel) {
 		Defaults.uiLogLevel = uiLogLevel;
 	}
 
-	public static int getInputBufferSize() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getInputBufferSize");
+	public static int getInputBufferSize() {
 		return inputBufferSize;
 	}
 
-	public static void setInputBufferSize(int inputBufferSize) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setInputBufferSize");
+	public static void setInputBufferSize(int inputBufferSize) {
 		Defaults.inputBufferSize = inputBufferSize;
 	}
 
-	public static int getDataChunkSize() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getDataChunkSize");
+	public static int getDataChunkSize() {
 		return dataChunkSize;
 	}
 
-	public static void setDataChunkSize(int dataChunkSize) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setDataChunkSize");
+	public static void setDataChunkSize(int dataChunkSize) {
 		Defaults.dataChunkSize = dataChunkSize;
 	}
 
-	public static int getSessionMonitorScrollBack() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getSessionMonitorScrollBack");
+	public static int getSessionMonitorScrollBack() {
 		return sessionMonitorScrollBack;
 	}
 
@@ -133,19 +133,19 @@ public class Defaults {
 		Defaults.sessionMonitorScrollBack = sessionMonitorScrollBack;
 	}
 
-	public static int getServerLogScrollBack() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getServerLogScrollBack");
+	public static int getServerLogScrollBack() {
 		return serverLogScrollBack;
 	}
 
-	public static void setLogScrollBack(int serverLogScrollBack) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setLogScrollBack");
+	public static void setLogScrollBack(int serverLogScrollBack) {
 		Defaults.serverLogScrollBack = serverLogScrollBack;
 	}
 
-	public static int getConsoleLogLevel() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: getConsoleLogLevel");
+	public static int getConsoleLogLevel() {
 		return consoleLogLevel;
 	}
 
-	public static void setConsoleLogLevel(int consoleLogLevel) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Defaults.java: setConsoleLogLevel");
+	public static void setConsoleLogLevel(int consoleLogLevel) {
 		Defaults.consoleLogLevel = consoleLogLevel;
 	}
 

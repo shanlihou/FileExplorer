@@ -52,11 +52,11 @@ public class FileOperationHelper {
         mOperationListener = l;
     }
 
-    public void setFilenameFilter(FilenameFilter f) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: setFilenameFilter");
+    public void setFilenameFilter(FilenameFilter f) {
         mFilter = f;
     }
 
-    public boolean CreateFolder(String path, String name) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: CreateFolder");
+    public boolean CreateFolder(String path, String name) {
         Log.v(LOG_TAG, "CreateFolder >>> " + path + "," + name);
 
         File f = new File(Util.makePath(path, name));
@@ -66,18 +66,18 @@ public class FileOperationHelper {
         return f.mkdir();
     }
 
-    public void Copy(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: Copy");
+    public void Copy(ArrayList<FileInfo> files) {
         copyFileList(files);
     }
 
-    public boolean Paste(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: Paste");
+    public boolean Paste(String path) {
         if (mCurFileNameList.size() == 0)
             return false;
 
         final String _path = path;
         asnycExecute(new Runnable() {
             @Override
-            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: run");
+            public void run() {
                 for (FileInfo f : mCurFileNameList) {
                     CopyFile(f, _path);
                 }
@@ -93,11 +93,11 @@ public class FileOperationHelper {
         return true;
     }
 
-    public boolean canPaste() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: canPaste");
+    public boolean canPaste() {
         return mCurFileNameList.size() != 0;
     }
 
-    public void StartMove(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: StartMove");
+    public void StartMove(ArrayList<FileInfo> files) {
         if (mMoving)
             return;
 
@@ -105,11 +105,11 @@ public class FileOperationHelper {
         copyFileList(files);
     }
 
-    public boolean isMoveState() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: isMoveState");
+    public boolean isMoveState() {
         return mMoving;
     }
 
-    public boolean canMove(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: canMove");
+    public boolean canMove(String path) {
         for (FileInfo f : mCurFileNameList) {
             if (!f.IsDir)
                 continue;
@@ -121,13 +121,13 @@ public class FileOperationHelper {
         return true;
     }
 
-    public void clear() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: clear");
+    public void clear() {
         synchronized(mCurFileNameList) {
             mCurFileNameList.clear();
         }
     }
 
-    public boolean EndMove(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: EndMove");
+    public boolean EndMove(String path) {
         if (!mMoving)
             return false;
         mMoving = false;
@@ -138,7 +138,7 @@ public class FileOperationHelper {
         final String _path = path;
         asnycExecute(new Runnable() {
             @Override
-            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: run");
+            public void run() {
                     for (FileInfo f : mCurFileNameList) {
                         MoveFile(f, _path);
                     }
@@ -158,7 +158,7 @@ public class FileOperationHelper {
         return mCurFileNameList;
     }
 
-    private void asnycExecute(Runnable r) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: asnycExecute");
+    private void asnycExecute(Runnable r) {
         final Runnable _r = r;
         new AsyncTask() {
             @Override
@@ -175,7 +175,7 @@ public class FileOperationHelper {
         }.execute();
     }
 
-    public boolean isFileSelected(String path) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: isFileSelected");
+    public boolean isFileSelected(String path) {
         synchronized(mCurFileNameList) {
             for (FileInfo f : mCurFileNameList) {
                 if (f.filePath.equalsIgnoreCase(path))
@@ -185,7 +185,7 @@ public class FileOperationHelper {
         return false;
     }
 
-    public boolean Rename(FileInfo f, String newName) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: Rename");
+    public boolean Rename(FileInfo f, String newName) {
         if (f == null || newName == null) {
             Log.e(LOG_TAG, "Rename: null parameter");
             return false;
@@ -209,11 +209,11 @@ public class FileOperationHelper {
         return false;
     }
 
-    public boolean Delete(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: Delete");
+    public boolean Delete(ArrayList<FileInfo> files) {
         copyFileList(files);
         asnycExecute(new Runnable() {
             @Override
-            public void run() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: run");
+            public void run() {
                 for (FileInfo f : mCurFileNameList) {
                     DeleteFile(f);
                 }
@@ -249,7 +249,7 @@ public class FileOperationHelper {
         Log.v(LOG_TAG, "DeleteFile >>> " + f.filePath);
     }
 
-    private void CopyFile(FileInfo f, String dest) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: CopyFile");
+    private void CopyFile(FileInfo f, String dest) {
         if (f == null || dest == null) {
             Log.e(LOG_TAG, "CopyFile: null parameter");
             return;
@@ -278,7 +278,7 @@ public class FileOperationHelper {
         Log.v(LOG_TAG, "CopyFile >>> " + f.filePath + "," + dest);
     }
 
-    private boolean MoveFile(FileInfo f, String dest) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: MoveFile");
+    private boolean MoveFile(FileInfo f, String dest) {
         Log.v(LOG_TAG, "MoveFile >>> " + f.filePath + "," + dest);
 
         if (f == null || dest == null) {
@@ -296,7 +296,7 @@ public class FileOperationHelper {
         return false;
     }
 
-    public boolean EncryptFile(FileInfo f, Context context){Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: EncryptFile");
+    public boolean EncryptFile(FileInfo f, Context context){
         try {
             InputStream  in = new FileInputStream(f.filePath);
             FileOutputStream fs1 = new FileOutputStream(f.filePath + "sh1");
@@ -323,24 +323,24 @@ public class FileOperationHelper {
         return true;
     }
 
-    public boolean DecryptFile(FileInfo f, Context context){Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: DecryptFile");
+    public boolean DecryptFile(FileInfo f, Context context){
         Log.d("shanlihou", f.fileName);
         if(!f.fileName.equals("shily")){
             return false;
         }
-        Log.d("shanlihou", "shily decrypt");
+        
         Cursor cursor = PrivateDatabaseHelper.getInstance(context).query();
         int count = cursor.getCount();
         Toast.makeText(context, "" + count, Toast.LENGTH_SHORT).show();
         cursor.moveToNext();
         while(cursor.moveToNext()){
-            Log.d("shanlihou", "cursor name:" + cursor.getString(2));
+            
             DecryptFile(cursor.getString(2));
             PrivateDatabaseHelper.getInstance(context).delete(cursor.getString(2));
         }
         return true;
     }
-    public boolean DecryptFile(String f){Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: DecryptFile");
+    public boolean DecryptFile(String f){
         try {
             FileOutputStream fs = new FileOutputStream(f);
             InputStream fs1 = new FileInputStream(f + "sh1");
@@ -370,7 +370,7 @@ public class FileOperationHelper {
         return true;
     }
 
-    private void copyFileList(ArrayList<FileInfo> files) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/FileOperationHelper.java: copyFileList");
+    private void copyFileList(ArrayList<FileInfo> files) {
         synchronized(mCurFileNameList) {
             mCurFileNameList.clear();
             for (FileInfo f : files) {

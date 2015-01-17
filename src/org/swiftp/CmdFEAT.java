@@ -28,7 +28,7 @@ public class CmdFEAT extends FtpCmd implements Runnable {
 		super(sessionThread, CmdFEAT.class.toString());
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdFEAT.java: run");
+	public void run() {
 		//sessionThread.writeString("211 No extended features\r\n");
 		sessionThread.writeString("211-Features supported\r\n");
 		sessionThread.writeString(" UTF8\r\n"); // advertise UTF8 support (fixes bug 14)

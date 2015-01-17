@@ -44,7 +44,7 @@ public abstract class CmdAbstractListing extends FtpCmd {
 	// Returns an error string if failure, returns null on success. May be
 	// called by CmdLIST or CmdNLST, since they each override makeLsString
 	// in a different way.
-	public String listDirectory(StringBuilder response, File dir) {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdAbstractListing.java: listDirectory");
+	public String listDirectory(StringBuilder response, File dir) {
 		if(!dir.isDirectory()) {
 			return "500 Internal error, listDirectory on non-directory\r\n";
 		}

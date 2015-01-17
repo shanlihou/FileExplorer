@@ -31,7 +31,7 @@ public class Globals {
     private static ProxyConnector proxyConnector = null;
     private static String username = null;
 
-    public static ProxyConnector getProxyConnector() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: getProxyConnector");
+    public static ProxyConnector getProxyConnector() {
         if(proxyConnector != null) {
             if(!proxyConnector.isAlive()) {
                 return null;
@@ -40,43 +40,43 @@ public class Globals {
         return proxyConnector;
     }
 
-    public static void setProxyConnector(ProxyConnector proxyConnector) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: setProxyConnector");
+    public static void setProxyConnector(ProxyConnector proxyConnector) {
         Globals.proxyConnector = proxyConnector;
     }
 
-    public static File getChrootDir() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: getChrootDir");
+    public static File getChrootDir() {
         return chrootDir;
     }
 
-    public static void setChrootDir(File chrootDir) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: setChrootDir");
+    public static void setChrootDir(File chrootDir) {
         if(chrootDir.isDirectory()) {
             Globals.chrootDir = chrootDir;
         }
     }
 
-    public static String getLastError() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: getLastError");
+    public static String getLastError() {
         return lastError;
     }
 
-    public static void setLastError(String lastError) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: setLastError");
+    public static void setLastError(String lastError) {
         Globals.lastError = lastError;
     }
 
-    public static Context getContext() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: getContext");
+    public static Context getContext() {
         return context;
     }
 
-    public static void setContext(Context context) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: setContext");
+    public static void setContext(Context context) {
         if(context != null) {
             Globals.context = context;
         }
     }
 
-    public static String getUsername() {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: getUsername");
+    public static String getUsername() {
         return username;
     }
 
-    public static void setUsername(String username) {Log.d("shanlihou", "../../mifile//src/org/swiftp/Globals.java: setUsername");
+    public static void setUsername(String username) {
         Globals.username = username;
     }
 

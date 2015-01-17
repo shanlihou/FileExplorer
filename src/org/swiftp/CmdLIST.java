@@ -43,7 +43,7 @@ public class CmdLIST extends CmdAbstractListing implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdLIST.java: run");
+	public void run() {
 		String errString = null;
 		
 		mainblock: {

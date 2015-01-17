@@ -30,7 +30,7 @@ public class CmdUSER extends FtpCmd implements Runnable {
 		
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdUSER.java: run");
+	public void run() {
 		myLog.l(Log.DEBUG, "USER executing");
 		String username = FtpCmd.getParameter(input);
 		if(!username.matches("[A-Za-z0-9]+")) { 

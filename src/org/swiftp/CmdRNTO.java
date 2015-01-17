@@ -31,7 +31,7 @@ public class CmdRNTO extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
-	public void run() {Log.d("shanlihou", "../../mifile//src/org/swiftp/CmdRNTO.java: run");
+	public void run() {
 		String param = getParameter(input);
 		String errString = null;
 		File toFile = null;

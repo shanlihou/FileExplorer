@@ -30,7 +30,7 @@ public abstract class FtpCmd implements Runnable {
 	protected MyLog myLog;
 	protected static MyLog staticLog = new MyLog(FtpCmd.class.toString());
 	
-	private static FtpCmd getCmd(String cmd, SessionThread sessionThread, String input) {Log.d("shanlihou", "../../mifile//src/org/swiftp/FtpCmd.java: getCmd");
+	private static FtpCmd getCmd(String cmd, SessionThread sessionThread, String input) {
 		if ("SYST".equals(cmd))
 			return new CmdSYST(sessionThread, input);
 		if ("USER".equals(cmd))
@@ -98,7 +98,7 @@ public abstract class FtpCmd implements Runnable {
 	abstract public void run();
 	
 	protected static void dispatchCommand(SessionThread session, 
-	                                      String inputString) {Log.d("shanlihou", "../../mifile//src/org/swiftp/FtpCmd.java: run");
+	                                      String inputString) {
 		String[] strings = inputString.split(" ");
 		String unrecognizedCmdMsg = "502 Command not recognized\r\n";
 		if(strings == null) {
@@ -149,7 +149,7 @@ public abstract class FtpCmd implements Runnable {
 	 * Some parameters shouldn't be logged or output (e.g. passwords),
 	 * so the caller can use silent==true in that case.
 	 */
-	static public String getParameter(String input, boolean silent) {Log.d("shanlihou", "../../mifile//src/org/swiftp/FtpCmd.java: getParameter");
+	static public String getParameter(String input, boolean silent) {
 		if(input == null) {
 			return "";
 		}
@@ -172,11 +172,11 @@ public abstract class FtpCmd implements Runnable {
 	/**
 	 * A wrapper around getParameter, for when we don't want it to be silent.
 	 */
-	static public String getParameter(String input) {Log.d("shanlihou", "../../mifile//src/org/swiftp/FtpCmd.java: getParameter");
+	static public String getParameter(String input) {
 		return getParameter(input, false);
 	}
 
-	public static File inputPathToChrootedFile(File existingPrefix, String param) {Log.d("shanlihou", "../../mifile//src/org/swiftp/FtpCmd.java: inputPathToChrootedFile");
+	public static File inputPathToChrootedFile(File existingPrefix, String param) {
 		try {
 			if(param.charAt(0) == '/') {
 				// The STOR contained an absolute path
@@ -189,7 +189,7 @@ public abstract class FtpCmd implements Runnable {
 		return new File(existingPrefix, param); 
 	}
 	
-	public boolean violatesChroot(File file) {Log.d("shanlihou", "../../mifile//src/org/swiftp/FtpCmd.java: violatesChroot");
+	public boolean violatesChroot(File file) {
 		File chroot = Globals.getChrootDir();
 		try {
 			String canonicalPath = file.getCanonicalPath();

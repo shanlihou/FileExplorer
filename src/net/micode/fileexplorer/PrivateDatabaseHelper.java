@@ -11,13 +11,13 @@ import android.util.Log;
  * Created by chenkezheng on 9/30/14.
  */
 public class PrivateDatabaseHelper extends SQLiteOpenHelper{
-    private PrivateDatabaseHelper(Context context){
+    public PrivateDatabaseHelper(Context context){
         super(context, "shilyData", null, 1);
     }
 
     private static PrivateDatabaseHelper instance = null;
 
-    public static PrivateDatabaseHelper getInstance(Context context){Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: getInstance");
+    public static PrivateDatabaseHelper getInstance(Context context){
         if(instance == null){
             return instance = new PrivateDatabaseHelper(context);
         }
@@ -26,33 +26,33 @@ public class PrivateDatabaseHelper extends SQLiteOpenHelper{
         }
     }
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: onCreate");Log.d("shanlihou", "dbCreate");
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String sql = "Create table " + "shilyData" + "(" + "ID" + " integer primary key autoincrement,"
                 + "name" + " text, " + "path" + " text );";
         sqLiteDatabase.execSQL(sql);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: onUpgrade");
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {
         String sql = " DROP TABLE IF EXISTS " + "shilyData";
         sqLiteDatabase.execSQL(sql);
         onCreate(sqLiteDatabase);
     }
 
-    public Cursor query() {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: query");
+    public Cursor query() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query("shilyData", null, null, null, null, null, null);
         return cursor;
     }
 
-    public long insert(String title, String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: insert");
-        Log.d("shanlihou", "title:" + title + " location:" + location);
+    public long insert(String title, String location) {
+        
         SQLiteDatabase db = this.getWritableDatabase();
         long ret = db.insert("shilyData", null, createValues(title, location));
         return ret;
     }
 
-    public void delete(long id) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: delete");
+    public void delete(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String where = "ID" + "=?";
         String[] whereValue = {
@@ -61,7 +61,7 @@ public class PrivateDatabaseHelper extends SQLiteOpenHelper{
         db.delete("shilyData", where, whereValue);
     }
 
-    public void delete(String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: delete");
+    public void delete(String location) {
         SQLiteDatabase db = this.getWritableDatabase();
         String where = "path" + "=?";
         String[] whereValue = {
@@ -70,7 +70,7 @@ public class PrivateDatabaseHelper extends SQLiteOpenHelper{
         db.delete("shilyData", where, whereValue);
     }
 
-    private ContentValues createValues(String title, String location) {Log.d("shanlihou", "../../mifile//src/net/micode/fileexplorer/PrivateDatabaseHelper.java: createValues");
+    private ContentValues createValues(String title, String location) {
         ContentValues cv = new ContentValues();
         cv.put("name", title);
         cv.put("path", location);
